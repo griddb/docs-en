@@ -6,6 +6,7 @@
 * [SQL commands supported by griddb](#sql-commands-supported-by-griddb)
 * [Metatables](#metatables)
 * [Reserved words](#reserved-words)
+
 ---
 # Introduction
 

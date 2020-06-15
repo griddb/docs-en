@@ -8,7 +8,7 @@
 * [Admin function](#admin-function)
 * [Parameter](#parameter)	
 
-						   
+
 ---							  
 # Introduction									 
 
@@ -1046,20 +1046,6 @@ Summary of the row expiry release and the partition expiry release
 	<br> 48 days-192 days : about 3 days
 	<br> 192 days-768 days : about 13 days
 	<br> 768 days- : about 38 days
-
-    
-
-<!--- テーブルが使えないため
->| 保持期間     | 期限切れからコールドデータになるまでの最大期間 |
->|--------------|------------------------------------------------|
->| ～3日        | 約1.2時間                                         |
->| 3日～12日    | 約5時間                                          |
->| 12日～48日   | 約19時間                                         |
->| 48日～192日  | 約3日                                          |
->| 192日～768日 | 約13日                                         |
->| 768日～      | 約38日                                         |
--->
-
 
 <a id="table_partitioning"></a>
 ## Table partitioning function
