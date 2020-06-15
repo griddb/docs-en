@@ -24,12 +24,12 @@ Start right away with the standard SQL, and connect to your favourite applicatio
 
 ## Release Notes
 
-GridDB CE v4.5 combines NoSQL and NewSQL dual interface capabilities, offering high performance and an improved ease of use.
+GridDB CE v4.5 combines NoSQL and SQL dual interface capabilities, offering high performance and an improved ease of use.
 Changes in v4.5 are as follows:
 
 - Added SQL Interface
 - Added Table Partitioning functionality
-- Added NewSQL JDBC Interface
+- Added SQL JDBC Interface
 - Exchange multiple nodes clustering for a single node setup
 
 ## Manual List
