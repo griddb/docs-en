@@ -393,7 +393,7 @@ The options that can be specified are same as those of [regular tables](#label_e
 
 | Function          | Item     | Property key           | Property value type                                  | Required or optional when setting expiry release |
 |--------------|----------|-------------------------|---------------------------------------------------|-------------------------|
-| Expiry release function  | Type     | expiration_type          | STRING <br>(Any of the followings. If omitted, PARTITION.<br>PARTITION: Partition expiry release<br /> ROW: Row expiry release)<br>ROW: ロウ期限解放) | 省略可 |
+| Expiry release function  | Type     | expiration_type          | STRING <br>(Any of the followings. If omitted, PARTITION.<br>PARTITION: Partition expiry release<br /> ROW: Row expiry release) | Optional |
 
 - The row expiry release can only be specified for timeseries table (timeseries container).
 - The partition expiry release can only be specified for followings:
