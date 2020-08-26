@@ -117,7 +117,7 @@ Follow the following procedures from 1 to 3.
    192.168.11.10
    ```
 
-### GridDB Admin user settingr
+### GridDB Admin user setting
 
 An admin user is used for authentication purposes in nodes and clusters. 
 Administrator user information is stored in the *User definition file*. The default file is as shown below.
