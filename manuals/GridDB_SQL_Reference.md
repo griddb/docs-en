@@ -1091,6 +1091,39 @@ Calculate on a set of two query results.
 | Query 1 EXCEPT query 2    | Returns the difference of two queries (result included in the query 1, not in the query 2). |
 
 
+### OVER
+
+Split and sort query results. Use with a WINDOW
+function.
+
+**Syntax**
+
+|                                                                         |
+| ----------------------------------------------------------------------- |
+| Function OVER ([PARTITION BY expression 1] [ORDER BY expression 2]) |
+
+**Specifications**
+
+  - Can be used in the SELECT clause.
+  - The corresponding functions are:
+      - ROW_NUMBER()
+  - Split the query result with PARTITION BY clause. Sort rows by ORDER
+    BY clause.
+  - Multiple use of the WINDOW function/OVER clause in the same SELECT
+    clause, and simultaneous use of the WINDOW function/OVER clause and
+    the MEDIAN function are not allowed.
+  - The following expressions cannot be specified in the PARTITION BY
+    clause.
+      - Expression containing OVER clause
+      - Expression containing aggregate function
+      - Expression containing column aliases
+      - Subquery
+  - The following expressions cannot be specified in the ORDER BY
+    clause.
+      - Expression containing OVER clause
+      - Expression containing aggregate function
+      - Expression containing column aliases
+      - Subquery
 
 
 ## Operator
@@ -1225,7 +1258,8 @@ The following functions are available for SQL statements.
 |                             | [VAR_SAMP](#var_samp)                 | Returns the sample variance                                                                              |
 |                             | [VARIANCE](#variancevariance0)         | Returns the sample variance                                                                              |
 |                             | [VARIANCE0](#variancevariance0)        | Returns the sample variance                                                                              |
-|                             | [VAR_POP](#var_pop)                   | Returns the population variance                                                                          |
+|                             | [VAR_POP](#var_pop)                   | Returns the population variance
+|                             | [MEDIAN](#MEDIAN)                      | Returns the median                                                                          |
 | [Arithmetic](#算術関数)         | [ABS](#abs)                            | Return an absolute value.                                                                                |
 |                             | [ROUND](#round)                        | Round off.                                                                                               |
 |                             | [RANDOM](#random)                      | Return a random number.                                                                                  |
@@ -1260,7 +1294,8 @@ The following functions are available for SQL statements.
 |                             | [EXTRACT](#extract)                    | Take out the value of the specific field from time.                                                      |
 |                             | [STRFTIME](#strftime)                  | Return a character string with the time converted.                                                       |
 |                             | [MAKE_TIMESTAMP](#make_timestamp)     | Generate time.                                                                                           |
-|                             | [TIMESTAMP_TRUNC](#timestamp_trunc)   | Truncate time.                                                                                           |
+|                             | [TIMESTAMP_TRUNC](#timestamp_trunc)   | Truncate time. 
+| [WINDOW](#window_function)  | [ROW_NUMBER](#row_number)             | Assign a unique sequential value to the resulting Row                                                                                           |
 | [Other](#other_function)    | [COALESCE](#coalesce)                  | Return the first argument that is not NULL.                                                              |
 |                             | [IFNULL](#ifnull)                      | Return the first argument that is not NULL.                                                              |
 |                             | [NULLIF](#nullif)                      | Return NULL when two arguments are the same, return the first argument when the arguments are different. |
@@ -1300,16 +1335,16 @@ table: departments
 <a id="aggregation"></a>
 ### Aggregate functions
 
-Aggregate value functions are as follows.
+Functions to aggregate values DISTINCT or ALL can be specified as the
+argument of an aggregate function.
 
-<!-- format -->
-Format  function( [ALL] *argument*)
-
-|        |                                          |
-| ------ | ---------------------------------------- |
+|      |      |
+|------|-------|
+| Format | function( [DISTINCT \| ALL] *argument*) |
 
 | Point    | Meaning                                                     |
 | -------- | ----------------------------------------------------------- |
+| DISTINCT | Rows of duplicate values are excluded and aggregated.       |
 | ALL      | All the rows including the duplicate values are aggregated. |
 
 When no argument is specified, the resut will be the same as ALL is specified.
@@ -1322,8 +1357,9 @@ When no argument is specified, the resut will be the same as ALL is specified.
 
 #### AVG
 
-<!-- format -->                        
-Format  AVG( [ALL] *n*)
+|      |      |
+|------|-------|
+| Format | AVG( [DISTINCT \| ALL] *n*) |
 
 Return the average value of n.
 
@@ -1335,6 +1371,9 @@ Example:
 ``` example
 SELECT AVG(age) FROM employees;
 Result: 41.0
+
+SELECT AVG(DISTINCT age) FROM employees;
+Result: 40.5
 
 SELECT department, AVG(age) avg FROM employees GROUP BY department;
 Result: 
@@ -1350,8 +1389,9 @@ Result:
 
 #### COUNT
 
-<!-- format -->
-Format | COUNT(* | [ALL] *x*)
+|      |      |
+|------|-------|
+| Format | COUNT( [DISTINCT \| ALL] *x*) |
 
 Return the number of rows.
 
@@ -1366,6 +1406,9 @@ Result: 6
 // Count the rows ignoring the ones with NULL value.
 SELECT COUNT(department) FROM employees;
 Result: 5
+
+SELECT COUNT(DISTINCT department) FROM employees;
+Result: 3
 ```
 
 <a id="Aggregate_MAX"></a>
@@ -1373,7 +1416,7 @@ Result: 5
 
 |      |      |
 |------|-------|
-| Format | MAX( [ALL] *x*) |
+| Format | MAX( [DISTINCT \| ALL] *x*) |
 
 Return the maximum.
 
@@ -1398,7 +1441,7 @@ Result: William
 
 |      |      |
 |------|-------|
-| format | MIN( [ALL] *x*) |
+| format | MIN( [DISTINCT \| ALL] *x*) |
 
 Return the minimum.
 
@@ -1424,8 +1467,8 @@ Result: James
 
 |      |      |
 |------|-------|
-| Format | SUM( [ALL] *n*) |
-| Format | TOTAL( [ALL] *n*) |
+| Format | SUM( [DISTINCT \| ALL] *n*) |
+| Format | TOTAL( [DISTINCT \| ALL] *n*) |
 
 Return a sum of values.
 
@@ -1461,7 +1504,7 @@ Result:
 
 |      |      |
 |------|-------|
-| Format | GROUP_CONCAT( [ALL] *x* [, *separator*] ) |
+| Format | GROUP_CONCAT( [DISTINCT \| ALL] *x* [, *separator*] ) |
 
 Return the character string in which the values of x are concatenated.
 Specify the separator to be concatenated as "separator". When not specified, ", " is used.
@@ -1497,7 +1540,7 @@ Result: 43 + 59 + 31 + 29 + 43
 
 |      |      |
 |------|-------|
-| Format | STDDEV_SAMP( [ALL] *x*) |
+| Format | STDDEV_SAMP( [DISTINCT \| ALL] *x*) |
 
 Returns the sample standard deviation.
 
@@ -1526,13 +1569,13 @@ Result:
 
 |      |      |
 |------|-------|
-| Format | STDDEV( [ALL] *x*) |
-| Format | STDDEV0( [ALL] *x*) |
+| Format | STDDEV( [DISTINCT \| ALL] *x*) |
+| Format | STDDEV0( [DISTINCT \| ALL] *x*) |
 
 Returns the sample standard deviation. STDDEV is an alias of the STDDEV_SAMP function.
 
 - Specify a numeric value for the argument x.
-  - Expressions cannot contain aggregate functions.
+  - Expressions cannot contain aggregate functions or WINDOW functions/OVER clauses.
 - Rows with x of NULL value are excluded from the calculation.
 - The result is of a DOUBLE type.
 - The differences between STDDEV and STDDEV0 are as follows:
@@ -1578,7 +1621,7 @@ Result:
 
 |      |      |
 |------|-------|
-| Format | STDDEV_POP( [ALL] *x*) |
+| Format | STDDEV_POP( [DISTINCT \| ALL] *x*) |
 
 Returns the population standard deviation.
 
@@ -1606,12 +1649,12 @@ Result:
 
 |      |      |
 |------|-------|
-| Format | VAR_SAMP( [ALL] *x*) |
+| Format | VAR_SAMP( [DISTINCT \| ALL] *x*) |
 
 Returns the sample variance.
 
 - Specify a numeric value for the argument x.
-  - Expressions cannot contain aggregate functions.
+  - Expressions cannot contain aggregate functions or WINDOW functions/OVER clauses.
 - Rows with x of NULL value are excluded from the calculation.
 - If x is 1, returns NULL.
 - The result is of a DOUBLE type.
@@ -1635,13 +1678,13 @@ Result:
 
 |        |                                    |
 | ------ | ---------------------------------- |
-| Format | VARIANCE([ALL] *x*)  |
-| Format | VARIANCE0([ALL] *x*) |
+| Format | VARIANCE([DISTINCT \| ALL] *x*)  |
+| Format | VARIANCE0([DISTINCT \| ALL] *x*) |
 
 Returns the sample variance. VARIANCE is an alias of the VAR_SAMP function.
 
 - Specify a numeric value for the argument x.
-  - Expressions cannot contain aggregate functions.
+  - Expressions cannot contain aggregate functions or WINDOW functions/OVER clauses.
 - Rows with x of NULL value are excluded from the calculation.
 - The result is of a DOUBLE type.
 - The differences between VARIANCE and VARIANCE0 are as follows:
@@ -1686,12 +1729,12 @@ Result:
 
 |        |                                   |
 | ------ | --------------------------------- |
-| Format | VAR_POP( [ALL] *x*) |
+| Format | VAR_POP( [DISTINCT \| ALL] *x*) |
 
 Returns the population variance.
 
 - Specify a numeric value for the argument x.
-  - Expressions cannot contain aggregate functions.
+  - Expressions cannot contain aggregate functions or WINDOW functions/OVER clauses.
 - Rows with x of NULL value are excluded from the calculation.
 - The result is of a DOUBLE type.
 
@@ -1708,6 +1751,39 @@ Result:
 
 ```
 
+#### MEDIAN
+
+|        |             |
+| ------ | ----------- |
+| Format | MEDIAN(*n*) |
+
+Returns the median of n. If the number of rows to be calculated is even,
+returns the average value of the two rows near the center.
+
+  - Specify a numeric value as the argument n.
+      - Subqueries cannot be specified.
+  - Rows with n of NULL value are excluded from the calculation.
+  - The type of the result is a LONG type when n includes only integers,
+    a DOUBLE type when n includes a floating point number.
+  - Multiple use of the WINDOW function/OVER clause in the same SELECT
+    clause, and simultaneous use of the WINDOW function/OVER clause and
+    the MEDIAN function are not allowed.
+
+Example:
+
+``` example
+SELECT MEDIAN(age) FROM employees;
+Result: 43
+
+SELECT department, MEDIAN(age) mn FROM employees GROUP BY department ORDER BY mn DESC;
+Result:
+  department   mn
+  ------------+-----
+  Development  51
+  Sales        43
+  Research     31
+  (NULL)       29
+```
 
 
 
@@ -2722,6 +2798,35 @@ Result: 2019-05-14T01:00:00.000Z
 
 ```
 
+<a id="window_function"></a>
+
+### WINDOW function
+
+#### ROW_NUMBER
+
+|        |                                                                                   |
+| ------ | --------------------------------------------------------------------------------- |
+| Format | ROW_NUMBER() OVER ( [PARTITION BY expression_1] [ORDER BY expression_2 ] ) |
+
+Assign a unique serial number to the resulting rows.
+
+  - Used with the OVER clause. See [OVER clause](#over) for
+details.
+
+Example:
+
+``` example
+SELECT ROW_NUMBER() OVER(PARTITION BY department ORDER BY age) no, first_name, age, department FROM employees;
+Result:
+  no   first_name   age      department
+  ----+------------+--------+-------------
+  1    James        43       Development
+  2    William      59       Development
+  1    Mary         31       Research
+  1    John         43       Sales
+  2    Richard      (NULL)   Sales
+  1    Lisa         29       (NULL)
+```
 
 
 <a id="other_function"></a>
