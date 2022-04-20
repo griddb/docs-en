@@ -15,7 +15,11 @@ In a nutshell, you can install GridDB on one machine and start / stop GridDB nod
 ---
 # Using source code
 
-We have confirmed the operation on CentOS 7.6 (gcc 4.8.5).
+We have confirmed the operation on CentOS 7.9 (gcc 4.8.5).
+
+Note:
+- Please install Python3 in advance.
+- Please install tcl like "yum install tcl.x86_64" in advance.
 
 ## Build a server and client(Java)
 
@@ -42,10 +46,6 @@ The following environment variables are defined.
 
 #### :warning: Note
 - These environment variables are referenced by the operational commands shown in the following subsections.
-- Default building environment repeals the trigger function. Add the following option in build to enable a trigger function. Add the following option in build to enable the trigger function.
-```
-$ ./configure --enable-activemq
-```
 
 ## Environmental settings
 
@@ -352,9 +352,10 @@ $ java gsSample/Sample1 239.0.0.1 31999 setup_cluster_name admin your_password
 ---
 # Using RPM
 
-We have confirmed the operation on CentOS 7.6.
+We have confirmed the operation on CentOS 7.9.
 
 #### :warning: Note
+- Please install Python3 in advance.
 - When you install this package, a gsadm OS user are created in the OS. Execute the operating command as the gsadm user.   
    Example
    ```
@@ -364,13 +365,14 @@ We have confirmed the operation on CentOS 7.6.
    ```
 - You do not need to set environment variable GS_HOME and GS_LOG. And the place of operating command is set to environment variable PATH.
 - There is Java client library (gridstore.jar) on /usr/share/java and a sample on /usr/gridb-XXX/docs/sample/programs.
+- If old version has been installed, please uninstall and remove conf/ and data/ on /var/lib/gridstore.
 
 ## Install
 
 Install the package of your target OS.
 	
 	(CentOS)
-    $ sudo rpm -ivh griddb_nosql-X.X.X-linux.x86_64.rpm
+    $ sudo rpm -ivh griddb-X.X.X-linux.x86_64.rpm
     
 	X.X.X means version
 	
@@ -401,12 +403,13 @@ The following two directories are created: GridDB home directory which contains 
 
 ###### GridDB home directory
 ```
-/var/lib/gridstore/                      #GridDB home directory
+/var/lib/gridstore/                      # GridDB home directory
                    conf/                 # Definition file directory
-                        gs_cluster.json  #Cluster definition file
-                        gs_node.json     #Node definition file
-                        password         #User definition file
-                   data/                 # Database file directory
+                        gs_cluster.json  # Cluster definition file
+                        gs_node.json     # Node definition file
+                        password         # User definition file
+                   data/                 # Data file, checkpoint log directory
+                   txnlog/               # Transaction log file directory
                    log/                  # Log directory
 ```
 
@@ -414,10 +417,11 @@ The following two directories are created: GridDB home directory which contains 
 ```
 Installation directory
             bin/                        # Operation command, module directory
-            conf/                       #Definition file directory
+            conf/                       # Definition file directory
                 gs_cluster.json         # Custer definition file
-                gs_node.json            #Node definition file
-                password                #User definition file
+                gs_node.json            # Node definition file
+                password                # User definition file
+            conf_multicast/             # Definition file directory (for remote connection)
             3rd_party/                  
             docs/
                 manual/
@@ -430,7 +434,13 @@ Installation directory
 
 ## Starting/stopping
 
-Operate as the gsadm user. Other than that, it is the same as "Start / Stop" in "[When using source code]".
+Operate as the gsadm user. 
+
+Default is only for local connection. So, please change the configure files as follows.
+
+    [gsadm]$ cp /usr/griddb-X.X.X/conf_multicast/* conf/.
+
+Other than that, it is the same as "Start / Stop" in "[When using source code]".
 
 ## Build/execution method
 
@@ -459,7 +469,7 @@ If you no longer need GridDB, uninstall the package. Execute the following proce
 [Example]
 
     (CentOS)
-    $ sudo rpm -e griddb_nosql
+    $ sudo rpm -e griddb
 
 #### :warning: Note
 - Files under the GridDB home directory such as definition files and data files will not be uninstalled. If you do not need it, delete it manually.
