@@ -1,3 +1,4 @@
+
 # GridDB Features Reference								 
 
 ## Table of Contents
@@ -2256,3 +2257,5 @@ Specify the directory by specifying the full path or a relative path from the GS
       ``` 
       Example) select "012column", data_15 from "container.2017-09"
       ```
+
+Copyright (c) 2017 TOSHIBA Digital Solutions Corporation
