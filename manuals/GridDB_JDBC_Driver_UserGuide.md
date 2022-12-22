@@ -1153,3 +1153,4 @@ public class SampleJDBC {
     }
 }
 ```
+Copyright (c) 2017 TOSHIBA Digital Solutions Corporation
