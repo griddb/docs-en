@@ -22,18 +22,6 @@ GridDB's "Memory first, Storage second" algorithm automatically allocates HOT da
 
 Start right away with the standard SQL, and connect to your favourite applications via JDBC.
 
-## Release Notes
-
-GridDB CE v4.5 combines NoSQL and SQL dual interface capabilities, offering high performance and an improved ease of use.
-
-Changes in v4.5 are as follows:
-1. Added SQL Interface and JDBC Driver
-    - In addition to the NoSQL interface, it is now possible to access the database using SQL with the JDBC driver.
-    - SQL92 compliant such as Group By and Join between different tables.
-2. Added Table Partitioning functionality
-   - By allocating the data of a huge table in a distributed manner, it is now possible to execute the processors in parallel and speed up access.
-3. Multiple nodes clustering is changed to a single node setup.
-
 ## Manual List
 
 | Name       | Description                 |
