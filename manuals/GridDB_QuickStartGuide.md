@@ -475,3 +475,5 @@ If you no longer need GridDB, uninstall the package. Execute the following proce
 - Files under the GridDB home directory such as definition files and data files will not be uninstalled. If you do not need it, delete it manually.
 
 ---
+
+Copyright (c) 2017 TOSHIBA Digital Solutions Corporation
