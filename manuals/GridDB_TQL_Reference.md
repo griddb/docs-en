@@ -729,3 +729,5 @@ The values that may be adopted by the basic datatypes below are as follows.
 Value that can be used to TQL operation in spatial (GEOMETRY) type is any arbitrary value returned by the ST_GeomFromText function. Among these values, the value that can be stored containers is excluding the QUADRATICSURFACE structure.
 
 The range of values of objects mapped onto the basic types through API may be different from those of the above basic types. The value out of the described range cannot be registered into containers. But the value may be used in the other operations, such as constructing a search condition. For example, a java.util.Date object to be mapped onto TIMESTAMP by Java API can have a value before the year 1970 that cannot be stored in containers, and the value can be used as a RowKey condition of a RowKeyPredicate object or in a sampling query. However, in that case, it is possible that an error occurs when obtaining rows by the condition. For the representation range of the object itself to be mapped onto the above basic types, see the definition of the object type.
+
+Copyright (c) 2017 TOSHIBA Digital Solutions Corporation
