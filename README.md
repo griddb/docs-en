@@ -58,5 +58,5 @@ Changes in v4.5 are as follows:
     Use the GitHub issue function if you have any requests, questions, or bug reports.
   * PullRequest  
     Use the GitHub pull request function if you want to contribute code.
-    You'll need to agree GridDB Contributor License Agreement(CLA_rev1.1.pdf).
+    You'll need to agree [GridDB Contributor License Agreement(CLA_rev1.1.pdf)](https://github.com/griddb/docs-en/blob/master/CLA_rev1.1.pdf)
     By using the GitHub pull request function, you shall be deemed to have agreed to GridDB Contributor License Agreement.
