@@ -526,7 +526,7 @@ h1.hidden {
 
 </div>
 
-<div id="content"><div style="text-align: right; font-size: 8pt;">Revision: 3916</div>
+<div id="content">
 <h1 class="title">GridDB Java API Reference</h1>
 
 
@@ -685,32 +685,41 @@ h1.hidden {
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></td>
+<td class="colLast">
+<div class="block">a builder to construct <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a>
+
+ This builder can construct <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> by setting only 
+ the required subset of information that can be referenced using <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a>.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="#Container.BindType.html__" title="class in com.toshiba.mwcloud.gs">Container.BindType</a>&lt;K,R,C extends <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs">Container</a>&lt;K,R&gt;&gt;</td>
 <td class="colLast">
 <div class="block">Represents the type information associated with the <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a> and
  its type parameters.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#ContainerInfo.html__" title="class in com.toshiba.mwcloud.gs">ContainerInfo</a></td>
 <td class="colLast">
 <div class="block">Represents the information about a specific Container.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#Geometry.html__" title="class in com.toshiba.mwcloud.gs">Geometry</a></td>
 <td class="colLast">
 <div class="block">Manages the geometry data which represents geometry range of two or three
  dimensions.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#GridStoreFactory.html__" title="class in com.toshiba.mwcloud.gs">GridStoreFactory</a></td>
 <td class="colLast">
 <div class="block">Manages a <a href="#GridStore.html__" title="interface in com.toshiba.mwcloud.gs"><code>GridStore</code></a> instance.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#IndexInfo.html__" title="class in com.toshiba.mwcloud.gs">IndexInfo</a></td>
 <td class="colLast">
 <div class="block">shows the index setting
@@ -719,39 +728,39 @@ h1.hidden {
  are not inspected.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#QueryAnalysisEntry.html__" title="class in com.toshiba.mwcloud.gs">QueryAnalysisEntry</a></td>
 <td class="colLast">
 <div class="block">Represents one of information entries composing a query plan and the results
  of analyzing a query operation.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs">RowKeyPredicate</a>&lt;K&gt;</td>
 <td class="colLast">
 <div class="block">Represents the condition that a <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a> satisfies.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#TimeSeries.BindType.html__" title="class in com.toshiba.mwcloud.gs">TimeSeries.BindType</a></td>
 <td class="colLast">
 <div class="block">Auxiliary class for configuring <a href="#Container.BindType.html__" title="class in com.toshiba.mwcloud.gs"><code>Container.BindType</code></a> which is associated
  with <a href="#TimeSeries.html__" title="interface in com.toshiba.mwcloud.gs"><code>TimeSeries</code></a> and its type parameters.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#TimeSeriesProperties.html__" title="class in com.toshiba.mwcloud.gs">TimeSeriesProperties</a></td>
 <td class="colLast">
 <div class="block">Represents the information about optional configuration settings used for newly creating or updating a TimeSeries.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="#TimestampUtils.html__" title="class in com.toshiba.mwcloud.gs">TimestampUtils</a></td>
 <td class="colLast">
 <div class="block">Provides the utilities for manipulating time data.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="#TriggerInfo.html__" title="class in com.toshiba.mwcloud.gs">TriggerInfo</a></td>
 <td class="colLast">
 <div class="block">Represent the trigger information for monitoring the Container update.</div>
@@ -907,6 +916,13 @@ h1.hidden {
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><a href="#TimePrecision.html__" title="annotation in com.toshiba.mwcloud.gs">TimePrecision</a></td>
+<td class="colLast">
+<div class="block">Sets date/time precision in row fields to be mapped during 
+ <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a> operations.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><a href="#TransientRowField.html__" title="annotation in com.toshiba.mwcloud.gs">TransientRowField</a></td>
 <td class="colLast">
 <div class="block">Specifies a Row field not to be mapped in operations on a <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a>.</div>
@@ -1309,9 +1325,15 @@ the order they are declared</dd></dl>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>java.sql.Timestamp</code></td>
+<td class="colLast"><code><strong><a href="#AggregationResult.html__getPreciseTimestamp()">getPreciseTimestamp</a></strong>()</code>
+<div class="block">Retrieves the result of aggregating time-type values as high-precision TIMESTAMP type (<code>Timestamp</code>) values.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>java.util.Date</code></td>
 <td class="colLast"><code><strong><a href="#AggregationResult.html__getTimestamp()">getTimestamp</a></strong>()</code>
-<div class="block">Obtains the result of aggregating time-type values in TIMESTAMP type (<code>Date</code>).</div>
+<div class="block">Retrieves the result of aggregating time-type values as normal -precision TIMESTAMP type (<code>Date</code>) values.</div>
 </td>
 </tr>
 </table>
@@ -1359,6 +1381,24 @@ the order they are declared</dd></dl>
  If the type of result is different, returns <code>null</code>.</dd></dl>
 </li>
 </ul>
+<a name="AggregationResult.html__getPreciseTimestamp()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPreciseTimestamp</h4>
+<pre>java.sql.Timestamp&nbsp;getPreciseTimestamp()</pre>
+<div class="block">Retrieves the result of aggregating time-type values as high-precision TIMESTAMP type (<code>Timestamp</code>) values.
+
+ <p>If non-TIMESTAMP type values are retained, 
+ <code>null</code> is returned.</p>
+
+ <p>If normal-precision TIMESTAMP values are retained, 
+ they are converted to high-precision values and then returned.</p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Result of aggregating high-precision TIMESTAMP type (<code>Timestamp</code>) values.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
+</li>
+</ul>
 <a name="AggregationResult.html__getTimestamp()">
 <!--   -->
 </a>
@@ -1366,10 +1406,13 @@ the order they are declared</dd></dl>
 <li class="blockList">
 <h4>getTimestamp</h4>
 <pre>java.util.Date&nbsp;getTimestamp()</pre>
-<div class="block">Obtains the result of aggregating time-type values in TIMESTAMP type (<code>Date</code>).
+<div class="block">Retrieves the result of aggregating time-type values as normal -precision TIMESTAMP type (<code>Date</code>) values.
 
- <p>It returns <code>null</code> if a result is not of TIMESTAMP type. </p></div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>Result of aggregating TIMESTAMP type (<code>Date</code>).
+ <p>It returns <code>null</code> if a result is not of TIMESTAMP type. </p>
+
+ <p>If high-precision TIMESTAMP values are retained, they are converted to 
+ normal-precision values and then returned.</p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>Result of aggregating normal-precision TIMESTAMP type (<code>Date</code>) values.
  If the type of result is different, returns <code>null</code>.</dd></dl>
 </li>
 </ul>
@@ -1720,6 +1763,306 @@ extends <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs">
 </div>
 </div>
 <!-- ========= END OF CLASS DATA ========= -->
+<a name="ColumnInfo.Builder.html__"><!-- --></a><!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<hr/><div class="subTitle"><a href="#package-summary.html__">com.toshiba.mwcloud.gs</a></div>
+<h2 title="Class ColumnInfo.Builder" class="title">Class ColumnInfo.Builder</h2>
+</div>
+<div class="contentContainer">
+<ul class="inheritance">
+<li>java.lang.Object</li>
+<li>
+<ul class="inheritance">
+<li>com.toshiba.mwcloud.gs.ColumnInfo.Builder</li>
+</ul>
+</li>
+</ul>
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt>Enclosing class:</dt>
+<dd><a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo</a></dd>
+</dl>
+<hr/>
+<br/>
+<pre>public static class <span class="strong">ColumnInfo.Builder</span>
+extends java.lang.Object</pre>
+<div class="block">a builder to construct <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a>
+
+ <p>This builder can construct <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> by setting only 
+ the required subset of information that can be referenced using <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a>.</p></div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ======== CONSTRUCTOR SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="ColumnInfo.Builder.html__constructor_summary">
+<!--   -->
+</a>
+<h3>Constructor Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Constructor Summary table, listing constructors, and an explanation">
+<caption><span>Constructors</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colOne" scope="col">Constructor and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="#ColumnInfo.Builder.html__ColumnInfo.Builder()">ColumnInfo.Builder</a></strong>()</code>
+<div class="block">Constructs a builder where none of the elements is specified.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="#ColumnInfo.Builder.html__ColumnInfo.Builder(com.toshiba.mwcloud.gs.ColumnInfo)">ColumnInfo.Builder</a></strong>(<a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo</a>&nbsp;info)</code>
+<div class="block">Constructs a builder where all the specified 
+ <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> elements are set.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="ColumnInfo.Builder.html__method_summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__set(com.toshiba.mwcloud.gs.ColumnInfo)">set</a></strong>(<a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo</a>&nbsp;info)</code>
+<div class="block">Sets all the specified <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> elements.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__setDefaultValueNull(java.lang.Boolean)">setDefaultValueNull</a></strong>(java.lang.Boolean&nbsp;defaultValueNull)</code>
+<div class="block">Sets whether to use NULL as an initial value of a column.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__setIndexTypes(java.util.Set)">setIndexTypes</a></strong>(java.util.Set&lt;<a href="#IndexType.html__" title="enum in com.toshiba.mwcloud.gs">IndexType</a>&gt;&nbsp;indexTypes)</code>
+<div class="block">Sets a set of index types.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__setName(java.lang.String)">setName</a></strong>(java.lang.String&nbsp;name)</code>
+<div class="block">Sets a column name.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__setNullable(java.lang.Boolean)">setNullable</a></strong>(java.lang.Boolean&nbsp;nullable)</code>
+<div class="block">Sets whether NOT NULL constraints are placed in a column.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__setTimePrecision(com.toshiba.mwcloud.gs.TimeUnit)">setTimePrecision</a></strong>(<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;timePrecision)</code>
+<div class="block">Sets date/time precision.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__setType(com.toshiba.mwcloud.gs.GSType)">setType</a></strong>(<a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs">GSType</a>&nbsp;type)</code>
+<div class="block">Sets a column type.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__toInfo()">toInfo</a></strong>()</code>
+<div class="block">Constructs <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> based on what is set in this builder.</div>
+</td>
+</tr>
+</table>
+<ul class="blockList">
+<li class="blockList"><a name="ColumnInfo.Builder.html__methods_inherited_from_class_java.lang.Object">
+<!--   -->
+</a>
+<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="ColumnInfo.Builder.html__constructor_detail">
+<!--   -->
+</a>
+<h3>Constructor Detail</h3>
+<a name="ColumnInfo.Builder.html__ColumnInfo.Builder()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ColumnInfo.Builder</h4>
+<pre>public&nbsp;ColumnInfo.Builder()</pre>
+<div class="block">Constructs a builder where none of the elements is specified.</div>
+</li>
+</ul>
+<a name="ColumnInfo.Builder.html__ColumnInfo.Builder(com.toshiba.mwcloud.gs.ColumnInfo)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>ColumnInfo.Builder</h4>
+<pre>public&nbsp;ColumnInfo.Builder(<a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo</a>&nbsp;info)</pre>
+<div class="block">Constructs a builder where all the specified 
+ <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> elements are set.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>info</code> - Column information including what is set to the builder</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code>java.lang.NullPointerException</code> - If <code>null</code> is specified as an argument</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="ColumnInfo.Builder.html__method_detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="ColumnInfo.Builder.html__set(com.toshiba.mwcloud.gs.ColumnInfo)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>set</h4>
+<pre>public&nbsp;<a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a>&nbsp;set(<a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo</a>&nbsp;info)</pre>
+<div class="block">Sets all the specified <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> elements.
+
+ <p>If the specified <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> contains an item in which nothing 
+ is set, nothing will be set to the corresponding items in 
+ the builder regardless of the original settings of this builder.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>info</code> - Column information including what is set to the builder</dd>
+<dt><span class="strong">Returns:</span></dt><dd>this builder</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code>java.lang.NullPointerException</code> - If <code>null</code> is specified as an argument</dd></dl>
+</li>
+</ul>
+<a name="ColumnInfo.Builder.html__setDefaultValueNull(java.lang.Boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefaultValueNull</h4>
+<pre>public&nbsp;<a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a>&nbsp;setDefaultValueNull(java.lang.Boolean&nbsp;defaultValueNull)</pre>
+<div class="block">Sets whether to use NULL as an initial value of a column.
+
+ <p>If the specified argument is <code>null</code>, nothing is set.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>defaultValueNull</code> - whether to use NULL as an initial value of a column.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>this builder</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#ColumnInfo.html__getDefaultValueNull()"><code>ColumnInfo.getDefaultValueNull()</code></a></dd></dl>
+</li>
+</ul>
+<a name="ColumnInfo.Builder.html__setIndexTypes(java.util.Set)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setIndexTypes</h4>
+<pre>public&nbsp;<a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a>&nbsp;setIndexTypes(java.util.Set&lt;<a href="#IndexType.html__" title="enum in com.toshiba.mwcloud.gs">IndexType</a>&gt;&nbsp;indexTypes)</pre>
+<div class="block">Sets a set of index types.
+
+ <p>If the specified argument is <code>null</code>, nothing is set.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>indexTypes</code> - a set of index types</dd>
+<dt><span class="strong">Returns:</span></dt><dd>this builder</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#ColumnInfo.html__getIndexTypes()"><code>ColumnInfo.getIndexTypes()</code></a></dd></dl>
+</li>
+</ul>
+<a name="ColumnInfo.Builder.html__setName(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setName</h4>
+<pre>public&nbsp;<a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a>&nbsp;setName(java.lang.String&nbsp;name)</pre>
+<div class="block">Sets a column name.
+
+ <p>If the specified argument is <code>null</code>, nothing is set.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - column name</dd>
+<dt><span class="strong">Returns:</span></dt><dd>this builder</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#ColumnInfo.html__getName()"><code>ColumnInfo.getName()</code></a></dd></dl>
+</li>
+</ul>
+<a name="ColumnInfo.Builder.html__setNullable(java.lang.Boolean)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setNullable</h4>
+<pre>public&nbsp;<a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a>&nbsp;setNullable(java.lang.Boolean&nbsp;nullable)</pre>
+<div class="block">Sets whether NOT NULL constraints are placed in a column.
+
+ <p>If the specified argument is <code>null</code>, nothing is set.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>nullable</code> - whether NOT NULL constraints are placed in a column.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>this builder</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#ColumnInfo.html__getNullable()"><code>ColumnInfo.getNullable()</code></a></dd></dl>
+</li>
+</ul>
+<a name="ColumnInfo.Builder.html__setTimePrecision(com.toshiba.mwcloud.gs.TimeUnit)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setTimePrecision</h4>
+<pre>public&nbsp;<a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a>&nbsp;setTimePrecision(<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;timePrecision)</pre>
+<div class="block">Sets date/time precision.
+
+ <p>If the specified argument is <code>null</code>, nothing is set.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>timePrecision</code> - date/time precision</dd>
+<dt><span class="strong">Returns:</span></dt><dd>this builder</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#ColumnInfo.html__getTimePrecision()"><code>ColumnInfo.getTimePrecision()</code></a></dd></dl>
+</li>
+</ul>
+<a name="ColumnInfo.Builder.html__setType(com.toshiba.mwcloud.gs.GSType)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setType</h4>
+<pre>public&nbsp;<a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a>&nbsp;setType(<a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs">GSType</a>&nbsp;type)</pre>
+<div class="block">Sets a column type.
+
+ <p>If the specified argument is <code>null</code>, nothing is set.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>type</code> - column type</dd>
+<dt><span class="strong">Returns:</span></dt><dd>this builder</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#ColumnInfo.html__getType()"><code>ColumnInfo.getType()</code></a></dd></dl>
+</li>
+</ul>
+<a name="ColumnInfo.Builder.html__toInfo()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>toInfo</h4>
+<pre>public&nbsp;<a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo</a>&nbsp;toInfo()</pre>
+<div class="block">Constructs <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> based on what is set in this builder.
+
+ <p>Column information to be returned will never change even when 
+ the settings of this builder are modified after construction.</p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>column information</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
 <a name="ColumnInfo.html__"><!-- --></a><!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
@@ -1752,6 +2095,30 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="ColumnInfo.html__nested_class_summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs">ColumnInfo.Builder</a></strong></code>
+<div class="block">a builder to construct <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a>
+
+ This builder can construct <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> by setting only 
+ the required subset of information that can be referenced using <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a>.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="ColumnInfo.html__constructor_summary">
@@ -1838,6 +2205,12 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a></code></td>
+<td class="colLast"><code><strong><a href="#ColumnInfo.html__getTimePrecision()">getTimePrecision</a></strong>()</code>
+<div class="block">Retrieves the date/time precision of this column.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs">GSType</a></code></td>
 <td class="colLast"><code><strong><a href="#ColumnInfo.html__getType()">getType</a></strong>()</code>
 <div class="block">Returns the type of a column, i.e., the type of each field value
@@ -2001,6 +2374,37 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Returns:</span></dt><dd><code>true</code> if the NOT NULL constraint is not set,
  <code>false</code> if set. If not set <code>null</code>.</dd><dt><span class="strong">Since:</span></dt>
   <dd>3.5</dd></dl>
+</li>
+</ul>
+<a name="ColumnInfo.html__getTimePrecision()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTimePrecision</h4>
+<pre>public&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;getTimePrecision()</pre>
+<div class="block">Retrieves the date/time precision of this column.
+
+ <p>In the current version, the following combination of column types and date/time 
+ precision can be used in defining a Container.</p>
+ <table summary="">
+ <thead><tr><th>column type</th><th>date/time precision</th></tr></thead>
+ <tbody>
+ <tr><td>TIMESTAMP type</td><td>
+ <ul>
+ <li><a href="#TimeUnit.html__MILLISECOND"><code>TimeUnit.MILLISECOND</code></a></li>
+ <li><a href="#TimeUnit.html__MICROSECOND"><code>TimeUnit.MICROSECOND</code></a></li>
+ <li><a href="#TimeUnit.html__NANOSECOND"><code>TimeUnit.NANOSECOND</code></a></li>
+ <li><code>null</code> (interpreted as if <a href="#TimeUnit.html__MILLISECOND"><code>TimeUnit.MILLISECOND</code></a> is specified)</li>
+ </ul>
+ </td></tr>
+ <tr><td>non-TIMESTAMP type</td><td><code>null</code></td></tr>
+ </tbody>
+ </table>
+
+ <p>Use <a href="#ColumnInfo.Builder.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo.Builder</code></a> to construct <a href="#ColumnInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ColumnInfo</code></a> with the date/time precision specified.</p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>date/time precision; if not set, <code>null</code>.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
 </li>
 </ul>
 <a name="ColumnInfo.html__getType()">
@@ -2597,7 +3001,7 @@ extends java.io.Closeable</pre>
  <p>Multiple column names that are different only in upper-
  and lowercase letters cannot be defined in a table.
  Further the allowed characters, the length of column names and
- the number of columns are limited. See the GridDB Technical
+ the number of columns are limited. See the GridDB Features
  Reference for the details. In the operations specifying column
  names, ASCII uppercase and lowercase characters are identified as
  same unless otherwise noted. Use <a href="#RowField.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowField</code></a> to specify
@@ -2618,7 +3022,8 @@ extends java.io.Closeable</pre>
  <tr><td>LONG</td><td><code>Long</code> or <code>long</code></td></tr>
  <tr><td>FLOAT</td><td><code>Float</code> or <code>float</code></td></tr>
  <tr><td>DOUBLE</td><td><code>Double</code> or <code>double</code></td></tr>
- <tr><td>TIMESTAMP</td><td><code>Date</code></td></tr>
+ <tr><td>TIMESTAMP (of normal-precision (millisecond))</td><td><code>Date</code></td></tr>
+ <tr><td>TIMESTAMP (of high-precision (microsecond/nanosecond))</td><td><code>Timestamp</code></td></tr>
  <tr><td>BLOB</td><td>Class implementing <code>Blob</code></td></tr>
  <tr><td>STRING array</td><td><code>String[]</code></td></tr>
  <tr><td>BOOL array</td><td><code>boolean[]</code></td></tr>
@@ -2633,7 +3038,7 @@ extends java.io.Closeable</pre>
  </table>
 
  <p>There are the restrictions on the display range and size of the
- field value. See the GridDB Technical Reference and the appendix
+ field value. See the GridDB Features Reference and the appendix
  "<a href="#sec-2-1">Range of values</a>" for the details.
  Values contrary to the restriction cannot be stored in a Container.</p>
 
@@ -2680,6 +3085,10 @@ extends java.io.Closeable</pre>
  <tr><td>ARRAY</td><td>Array with 0 element</td></tr>
  </tbody>
  </table>
+
+ <p>日時精度は、<a href="#TimePrecision.html__value()"><code>TimePrecision.value()</code></a>もしくは <a href="#ColumnInfo.html__getTimePrecision()"><code>ColumnInfo.getTimePrecision()</code></a>により明示的に指定できます。</p>
+ <p>date/time precision can be explicitly specified using 
+ <a href="#TimePrecision.html__value()"><code>TimePrecision.value()</code></a> or <a href="#ColumnInfo.html__getTimePrecision()"><code>ColumnInfo.getTimePrecision()</code></a>.</p>
 
  <p>During transaction processing, the auto commit mode is enabled by default.
  In the auto commit mode, change operations are confirmed sequentially
@@ -3056,7 +3465,7 @@ extends java.io.Closeable</pre>
  <p>If an index name is set, a new index is created only if
  there is no index with the same name or the different name
  only in upper- or lowercase letters in the target
- container. See the GridDB Technical Reference for the
+ container. See the GridDB Features Reference for the
  details. In defining an index name, there are limits on
  the allowed characters and the length. In the operations of
  index, the names are not case-sensitive unless otherwise
@@ -3241,7 +3650,7 @@ extends java.io.Closeable</pre>
  notification conditions, in a container cannot be
  defined. And there are the limitations, the allowed characters
  and the length, on the trigger names. See the GridDB
- Technical Reference for the details. Trigger names are
+ Features Reference for the details. Trigger names are
  case-sensitive unless otherwise noted.</p>
 
  <b>Trigger type</b>
@@ -3353,7 +3762,7 @@ extends java.io.Closeable</pre>
  Therefore, a trigger having an invalid notification destination URI
  is recommended to be deleted by using <a href="#Container.html__dropTrigger(java.lang.String)"><code>dropTrigger(String)</code></a>.</p>
 
- <p>See the GridDB Technical Reference for the maximum number of
+ <p>See the GridDB Features Reference for the maximum number of
  triggers that can be set for a single Container and the upper limit of the
  values for various trigger settings.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>info</code> - Trigger information of the setting target</dd>
@@ -4380,7 +4789,7 @@ extends java.lang.Object</pre>
  which includes Rows with similar elapsed time periods.</p>
 
  <p>There are the limitations, allowed characters and maximum
- length, for the data affinity string. See GridDB Technical
+ length, for the data affinity string. See GridDB Features
  Reference for the details. All the limitations may not be
  checked when setting the string. The data affinity string
  is case-sensitive unless otherwise noted.</p></div>
@@ -6392,7 +6801,7 @@ extends java.io.Closeable</pre>
  different only in uppercase and lowercase ASCII characters cannot
  be defined in a database. A container name is represented by only
  a base container name or by connecting the base name and a node
- affinity name with '@'. See the GridDB Technical Reference for the
+ affinity name with '@'. See the GridDB Features Reference for the
  details. In the operations specifying a container name, uppercase
  and lowercase ASCII characters are identified as the same unless
  otherwise noted.</p>
@@ -6897,7 +7306,7 @@ extends java.io.Closeable</pre>
  <p>If the system tries to acquire a large number of Rows all at once,
  the upper limit of the communication buffer size managed by the GridDB
  node may be reached, possibly resulting in a failure.
- Refer to "System limiting values" in the GridDB Technical Reference for the upper limit size.</p>
+ Refer to "System limiting values" in the GridDB Features Reference for the upper limit size.</p>
 
  <p>The thrown <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs"><code>GSException</code></a> may contain <code>container</code>
  parameter. For the details of the parameters
@@ -7212,7 +7621,7 @@ extends java.io.Closeable</pre>
  <p>If the system tries to acquire a large number of Rows all at once,
  the upper limit of the communication buffer size managed by the GridDB
  node may be reached, possibly resulting in a failure.
- Refer to "System limiting values" in the GridDB Technical Reference for the upper limit size.</p>
+ Refer to "System limiting values" in the GridDB Features Reference for the upper limit size.</p>
 
  <p>The thrown <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs"><code>GSException</code></a> may contain <code>container</code>
  parameter. For the details of the parameters
@@ -8017,16 +8426,16 @@ implements java.io.Closeable</pre>
  <table summary="">
  <thead><tr><th>Property</th><th>Description</th></tr></thead>
  <tbody>
- <tr><td>host</td><td>A destination host name. An IP address (IPV4 only) is
+ <tr><td>host</td><td>A destination host name. An IP address (IPv4 only) is
  also available. Mandatory for manually setting a master. For autodetection
  of a master, omit the setting.</td></tr>
  <tr><td>port</td><td>A destination port number. A string representing of
  a number from <code>0</code> to <code>65535</code>. Mandatory for manually setting a master.
  For autodetection of a master, omit the setting.</td></tr>
- <tr><td>notificationAddress</td><td>An IP address (IPV4 only) for receiving
+ <tr><td>notificationAddress</td><td>An IP address (IPv4 only) for receiving
  a notification used for autodetection of a master. A default address is
  used if omitted.
- This property cannot be specified with neither notificationMember nor
+ This property cannot be specified with neither <code>notificationMember</code> nor
  notificationProvider properties at the same time.
  </td></tr>
  <tr><td>notificationPort</td><td>A port number for receiving a notification
@@ -8094,15 +8503,15 @@ implements java.io.Closeable</pre>
  cluster which is configured with FIXED_LIST mode, and specified as
  follows.
  <pre>(Address1):(Port1),(Address2):(Port2),...</pre>
- This property cannot be specified with neither notificationAddress nor
+ This property cannot be specified with neither <code>notificationAddress</code> nor
  notificationProvider properties at the same time.
  This property is supported on version 2.9 or later.
  </td></tr>
  <tr><td>notificationProvider</td><td>
  A URL of address provider. It is used to connect to cluster which is
  configured with PROVIDER mode.
- This property cannot be specified with neither notificationAddress nor
- notificationMember properties at the same time.
+ This property cannot be specified with neither <code>notificationAddress</code> nor
+ <code>notificationMember</code> properties at the same time.
  This property is supported on version 2.9 or later.
 
  </td></tr>
@@ -8121,11 +8530,64 @@ implements java.io.Closeable</pre>
  "<code>auto</code>" can only be used for the time zone that does not observe the
  daylight saving time.
  This property is supported on version 4.3 or later.</td></tr>
+ <tr>
+ <td>authentication</td>
+ <td>authentication type. One of the following strings can be specified:
+ <dl>
+ <dt><code>"INTERNAL"</code></dt>
+ <dd>internal authentication based on the account information managed on
+ the cluster.</dd>
+ <dt><code>"LDAP"</code></dt>
+ <dd>external authentication based on the account information managed by
+ the LDAP server outside the cluster. This property is not applicable when
+ connecting to the cluster where LDAP connection settings are not available
+ or when the administrative user is used.</dd>
+ </dl>
+ If omitted, the authentication type is automatically selected.
+ Generally, it is not necessary to specify the authentication type.
+ It is necessary, for example, to specify internal authentication when
+ connecting to the cluster that uses both internal and external
+ authentication for a non-administrative user. 
+ This property is supported on version 4.5 or later.</td>
+ </tr>
+ <tr>
+ <td>sslMode</td>
+ <td>mode for specifying whether to use SSL in connecting to the cluster.
+ One of the following strings can be specified:
+ <dl>
+ <dt><code>"DISABLED"</code></dt>
+ <dd>Never uses SSL.</dd>
+ <dt><code>"PREFERRED"</code></dt>
+ <dd>Uses SSL as much as possible. If both SSL and non-SSL
+ connections can be used, uses SSL connection.</dd>
+ <dt><code>"VERIFY"</code></dt>
+ <dd>Always uses SSL. Server certificate verification is enabled.</dd>
+ </dl>
+ This property is applicable only when the environment settings
+ (For details, see <a href="#GridStoreFactory.html__" title="class in com.toshiba.mwcloud.gs"><code>GridStoreFactory</code></a>) allow to select SSL connection.
+ Otherwise, it is not applicable regardless of the value of the property. 
+ If SSL connection can be selected but the value is omitted,<code>"PREFERRED"</code>
+ is specified by default. This property is supported on version 4.5 or later.
+ <code>"VERIFY"</code> is supported on version 4.6 or later.</td>
+ </tr>
+ <tr>
+ <td>connectionRoute</td>
+ <td>A communication path used when connected to a cluster.
+ The following string can be specified:
+ <dl>
+ <dt><code>"PUBLIC"</code></dt>
+ <dd>Connects to a cluster with multiple communication paths settings by
+ using an external communication path.</dd>
+ </dl>
+ When omitted, a normal communication path is used to establish a connection.
+ Specify this string only when external connection is required.
+ Supported starting with version 5.1.1.</td>
+ </tr>
  </tbody>
  </table>
 
  <p>Cluster names, database names, user names and passwords
- are case-sensitive. See the GridDB Technical Reference for
+ are case-sensitive. See the GridDB Features Reference for
  the details of the limitations, such as allowed characters
  and maximum length. When a name violating the limitations has
  been specified as a property value, the error detection may
@@ -9621,7 +10083,7 @@ extends java.io.Closeable</pre>
  of this query will be closed.</p>
 
  <p>It will be failed if too much Rows are obtained, because of the data buffer
- size upper limit of GridDB node. See "System limiting values" in the GridDB Technical Reference about
+ size upper limit of GridDB node. See "System limiting values" in the GridDB Features Reference about
  the buffer size upper limit.</p></div>
 <dl><dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if <code>true</code> is specified as <code>forUpdate</code> although the autocommit
@@ -10343,7 +10805,7 @@ extends <a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;com.toshiba.mwcloud.gs.<a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a></h3>
-<code><a href="#Row.html__createKey()">createKey</a>, <a href="#Row.html__createRow()">createRow</a>, <a href="#Row.html__getBlob(int)">getBlob</a>, <a href="#Row.html__getBool(int)">getBool</a>, <a href="#Row.html__getBoolArray(int)">getBoolArray</a>, <a href="#Row.html__getByte(int)">getByte</a>, <a href="#Row.html__getByteArray(int)">getByteArray</a>, <a href="#Row.html__getDouble(int)">getDouble</a>, <a href="#Row.html__getDoubleArray(int)">getDoubleArray</a>, <a href="#Row.html__getFloat(int)">getFloat</a>, <a href="#Row.html__getFloatArray(int)">getFloatArray</a>, <a href="#Row.html__getGeometry(int)">getGeometry</a>, <a href="#Row.html__getInteger(int)">getInteger</a>, <a href="#Row.html__getIntegerArray(int)">getIntegerArray</a>, <a href="#Row.html__getLong(int)">getLong</a>, <a href="#Row.html__getLongArray(int)">getLongArray</a>, <a href="#Row.html__getSchema()">getSchema</a>, <a href="#Row.html__getShort(int)">getShort</a>, <a href="#Row.html__getShortArray(int)">getShortArray</a>, <a href="#Row.html__getString(int)">getString</a>, <a href="#Row.html__getStringArray(int)">getStringArray</a>, <a href="#Row.html__getTimestamp(int)">getTimestamp</a>, <a href="#Row.html__getTimestampArray(int)">getTimestampArray</a>, <a href="#Row.html__getValue(int)">getValue</a>, <a href="#Row.html__isNull(int)">isNull</a>, <a href="#Row.html__setBlob(int, java.sql.Blob)">setBlob</a>, <a href="#Row.html__setBool(int, boolean)">setBool</a>, <a href="#Row.html__setBoolArray(int, boolean[])">setBoolArray</a>, <a href="#Row.html__setByte(int, byte)">setByte</a>, <a href="#Row.html__setByteArray(int, byte[])">setByteArray</a>, <a href="#Row.html__setDouble(int, double)">setDouble</a>, <a href="#Row.html__setDoubleArray(int, double[])">setDoubleArray</a>, <a href="#Row.html__setFloat(int, float)">setFloat</a>, <a href="#Row.html__setFloatArray(int, float[])">setFloatArray</a>, <a href="#Row.html__setGeometry(int, com.toshiba.mwcloud.gs.Geometry)">setGeometry</a>, <a href="#Row.html__setInteger(int, int)">setInteger</a>, <a href="#Row.html__setIntegerArray(int, int[])">setIntegerArray</a>, <a href="#Row.html__setLong(int, long)">setLong</a>, <a href="#Row.html__setLongArray(int, long[])">setLongArray</a>, <a href="#Row.html__setNull(int)">setNull</a>, <a href="#Row.html__setShort(int, short)">setShort</a>, <a href="#Row.html__setShortArray(int, short[])">setShortArray</a>, <a href="#Row.html__setString(int, java.lang.String)">setString</a>, <a href="#Row.html__setStringArray(int, java.lang.String[])">setStringArray</a>, <a href="#Row.html__setTimestamp(int, java.util.Date)">setTimestamp</a>, <a href="#Row.html__setTimestampArray(int, java.util.Date[])">setTimestampArray</a>, <a href="#Row.html__setValue(int, java.lang.Object)">setValue</a></code></li>
+<code><a href="#Row.html__createKey()">createKey</a>, <a href="#Row.html__createRow()">createRow</a>, <a href="#Row.html__getBlob(int)">getBlob</a>, <a href="#Row.html__getBool(int)">getBool</a>, <a href="#Row.html__getBoolArray(int)">getBoolArray</a>, <a href="#Row.html__getByte(int)">getByte</a>, <a href="#Row.html__getByteArray(int)">getByteArray</a>, <a href="#Row.html__getDouble(int)">getDouble</a>, <a href="#Row.html__getDoubleArray(int)">getDoubleArray</a>, <a href="#Row.html__getFloat(int)">getFloat</a>, <a href="#Row.html__getFloatArray(int)">getFloatArray</a>, <a href="#Row.html__getGeometry(int)">getGeometry</a>, <a href="#Row.html__getInteger(int)">getInteger</a>, <a href="#Row.html__getIntegerArray(int)">getIntegerArray</a>, <a href="#Row.html__getLong(int)">getLong</a>, <a href="#Row.html__getLongArray(int)">getLongArray</a>, <a href="#Row.html__getPreciseTimestamp(int)">getPreciseTimestamp</a>, <a href="#Row.html__getSchema()">getSchema</a>, <a href="#Row.html__getShort(int)">getShort</a>, <a href="#Row.html__getShortArray(int)">getShortArray</a>, <a href="#Row.html__getString(int)">getString</a>, <a href="#Row.html__getStringArray(int)">getStringArray</a>, <a href="#Row.html__getTimestamp(int)">getTimestamp</a>, <a href="#Row.html__getTimestampArray(int)">getTimestampArray</a>, <a href="#Row.html__getValue(int)">getValue</a>, <a href="#Row.html__isNull(int)">isNull</a>, <a href="#Row.html__setBlob(int, java.sql.Blob)">setBlob</a>, <a href="#Row.html__setBool(int, boolean)">setBool</a>, <a href="#Row.html__setBoolArray(int, boolean[])">setBoolArray</a>, <a href="#Row.html__setByte(int, byte)">setByte</a>, <a href="#Row.html__setByteArray(int, byte[])">setByteArray</a>, <a href="#Row.html__setDouble(int, double)">setDouble</a>, <a href="#Row.html__setDoubleArray(int, double[])">setDoubleArray</a>, <a href="#Row.html__setFloat(int, float)">setFloat</a>, <a href="#Row.html__setFloatArray(int, float[])">setFloatArray</a>, <a href="#Row.html__setGeometry(int, com.toshiba.mwcloud.gs.Geometry)">setGeometry</a>, <a href="#Row.html__setInteger(int, int)">setInteger</a>, <a href="#Row.html__setIntegerArray(int, int[])">setIntegerArray</a>, <a href="#Row.html__setLong(int, long)">setLong</a>, <a href="#Row.html__setLongArray(int, long[])">setLongArray</a>, <a href="#Row.html__setNull(int)">setNull</a>, <a href="#Row.html__setPreciseTimestamp(int, java.sql.Timestamp)">setPreciseTimestamp</a>, <a href="#Row.html__setShort(int, short)">setShort</a>, <a href="#Row.html__setShortArray(int, short[])">setShortArray</a>, <a href="#Row.html__setString(int, java.lang.String)">setString</a>, <a href="#Row.html__setStringArray(int, java.lang.String[])">setStringArray</a>, <a href="#Row.html__setTimestamp(int, java.util.Date)">setTimestamp</a>, <a href="#Row.html__setTimestampArray(int, java.util.Date[])">setTimestampArray</a>, <a href="#Row.html__setValue(int, java.lang.Object)">setValue</a></code></li>
 </ul>
 </li>
 </ul>
@@ -10545,161 +11007,174 @@ extends <a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>java.sql.Timestamp</code></td>
+<td class="colLast"><code><strong><a href="#Row.html__getPreciseTimestamp(int)">getPreciseTimestamp</a></strong>(int&nbsp;column)</code>
+<div class="block">Retrieves a value from the specified high-precision TIMESTAMP type field.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="#ContainerInfo.html__" title="class in com.toshiba.mwcloud.gs">ContainerInfo</a></code></td>
 <td class="colLast"><code><strong><a href="#Row.html__getSchema()">getSchema</a></strong>()</code>
 <div class="block">Returns the schema corresponding to the specified Row.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>short</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__getShort(int)">getShort</a></strong>(int&nbsp;column)</code>
 <div class="block">Returns the short value of the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>short[]</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__getShortArray(int)">getShortArray</a></strong>(int&nbsp;column)</code>
 <div class="block">Returns the short array value of the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__getString(int)">getString</a></strong>(int&nbsp;column)</code>
 <div class="block">Returns the String value of the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__getStringArray(int)">getStringArray</a></strong>(int&nbsp;column)</code>
 <div class="block">Returns the String array value of the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.util.Date</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__getTimestamp(int)">getTimestamp</a></strong>(int&nbsp;column)</code>
-<div class="block">Returns the TIMESTAMP value of the specified field.</div>
+<div class="block">Retrieves a value from the specified normal-precision TIMESTAMP type field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>java.util.Date[]</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__getTimestampArray(int)">getTimestampArray</a></strong>(int&nbsp;column)</code>
 <div class="block">Returns the TIMESTAMP array value of the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>java.lang.Object</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__getValue(int)">getValue</a></strong>(int&nbsp;column)</code>
 <div class="block">Returns the value of the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__isNull(int)">isNull</a></strong>(int&nbsp;column)</code>
 <div class="block">Returns to the specified field regardless it is set to NULL or not.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setBlob(int, java.sql.Blob)">setBlob</a></strong>(int&nbsp;column,
        java.sql.Blob&nbsp;fieldValue)</code>
 <div class="block">Sets the Blob value to the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setBool(int, boolean)">setBool</a></strong>(int&nbsp;column,
        boolean&nbsp;fieldValue)</code>
 <div class="block">Sets the boolean value to the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setBoolArray(int, boolean[])">setBoolArray</a></strong>(int&nbsp;column,
             boolean[]&nbsp;fieldValue)</code>
 <div class="block">Sets the boolean array value to the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setByte(int, byte)">setByte</a></strong>(int&nbsp;column,
        byte&nbsp;fieldValue)</code>
 <div class="block">Sets the byte value to the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setByteArray(int, byte[])">setByteArray</a></strong>(int&nbsp;column,
             byte[]&nbsp;fieldValue)</code>
 <div class="block">Sets the byte array value to the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setDouble(int, double)">setDouble</a></strong>(int&nbsp;column,
          double&nbsp;fieldValue)</code>
 <div class="block">Sets the double value to the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setDoubleArray(int, double[])">setDoubleArray</a></strong>(int&nbsp;column,
               double[]&nbsp;fieldValue)</code>
 <div class="block">Sets the double array value to the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setFloat(int, float)">setFloat</a></strong>(int&nbsp;column,
         float&nbsp;fieldValue)</code>
 <div class="block">Sets the float value to the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setFloatArray(int, float[])">setFloatArray</a></strong>(int&nbsp;column,
              float[]&nbsp;fieldValue)</code>
 <div class="block">Sets the float array value to the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setGeometry(int, com.toshiba.mwcloud.gs.Geometry)">setGeometry</a></strong>(int&nbsp;column,
            <a href="#Geometry.html__" title="class in com.toshiba.mwcloud.gs">Geometry</a>&nbsp;fieldValue)</code>
 <div class="block">Sets the Geometry value to the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setInteger(int, int)">setInteger</a></strong>(int&nbsp;column,
           int&nbsp;fieldValue)</code>
 <div class="block">Sets the int value to the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setIntegerArray(int, int[])">setIntegerArray</a></strong>(int&nbsp;column,
                int[]&nbsp;fieldValue)</code>
 <div class="block">Sets the int array value to the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setLong(int, long)">setLong</a></strong>(int&nbsp;column,
        long&nbsp;fieldValue)</code>
 <div class="block">Sets the long value to the specified field.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setLongArray(int, long[])">setLongArray</a></strong>(int&nbsp;column,
             long[]&nbsp;fieldValue)</code>
 <div class="block">Sets the long array value to the specified field.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setNull(int)">setNull</a></strong>(int&nbsp;column)</code>
 <div class="block">Set the field to NULL.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><strong><a href="#Row.html__setPreciseTimestamp(int, java.sql.Timestamp)">setPreciseTimestamp</a></strong>(int&nbsp;column,
+                   java.sql.Timestamp&nbsp;fieldValue)</code>
+<div class="block">Sets a value in the specified high-precision TIMESTAMP type field.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -10734,7 +11209,7 @@ extends <a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#Row.html__setTimestamp(int, java.util.Date)">setTimestamp</a></strong>(int&nbsp;column,
             java.util.Date&nbsp;fieldValue)</code>
-<div class="block">Sets the TIMESTAMP value to the specified field.</div>
+<div class="block">Sets a value in the specified normal-precision TIMESTAMP type field.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -11056,6 +11531,31 @@ extends <a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a
 <dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the type of the specified field does not match the type of the Column.</dd></dl>
 </li>
 </ul>
+<a name="Row.html__getPreciseTimestamp(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getPreciseTimestamp</h4>
+<pre>java.sql.Timestamp&nbsp;getPreciseTimestamp(int&nbsp;column)
+                                       throws <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></pre>
+<div class="block">Retrieves a value from the specified high-precision TIMESTAMP type field.
+
+ <p>When the content of the returned object is modified after calling it, 
+ whether the content of this object will change or not is undefined.
+ Moreover, the content of the returned object will not change 
+ due to the operations on this object.</p>
+
+ <p>In the current version, no value can be retrieved from 
+ a normal-precision TIMESTAMP type field.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>column</code> - column number of the target field; a value from zero or greater than zero to a value less than the number of columns</dd>
+<dt><span class="strong">Returns:</span></dt><dd>a value of the target field; <code>null</code>, if NULL Is set.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the specified Column number is out of range.</dd>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the value does not match the type and precision of the specified Column number.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
+</li>
+</ul>
 <a name="Row.html__getSchema()">
 <!--   -->
 </a>
@@ -11158,17 +11658,20 @@ extends <a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a
 <h4>getTimestamp</h4>
 <pre>java.util.Date&nbsp;getTimestamp(int&nbsp;column)
                             throws <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></pre>
-<div class="block">Returns the TIMESTAMP value of the specified field.
+<div class="block">Retrieves a value from the specified normal-precision TIMESTAMP type field.
 
  <p>If the contents of a specified object is changed after it has been invoked,
  it is not defined whether the contents of this object will be changed or not.
  Moreover, after an object is returned, updating this object will not change
- the contents of the returned object.</p></div>
+ the contents of the returned object.</p>
+ 
+ <p>In the current version, no value can be retrieved 
+ from a high-precision TIMESTAMP type field.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>column</code> - the Column number of the target field, from <code>0</code> to number of Columns minus one.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>the value of the target field. If NULL is set as <code>null</code>.</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the specified Column number is out of range.</dd>
-<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the type of the specified field does not match the type of the Column.</dd></dl>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the value does not match the type and precision of the specified Column number.</dd></dl>
 </li>
 </ul>
 <a name="Row.html__getTimestampArray(int)">
@@ -11498,6 +12001,31 @@ extends <a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a
   <dd>3.5</dd></dl>
 </li>
 </ul>
+<a name="Row.html__setPreciseTimestamp(int, java.sql.Timestamp)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPreciseTimestamp</h4>
+<pre>void&nbsp;setPreciseTimestamp(int&nbsp;column,
+                       java.sql.Timestamp&nbsp;fieldValue)
+                         throws <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></pre>
+<div class="block">Sets a value in the specified high-precision TIMESTAMP type field.
+
+ <p>When the content of the specified object is modified after calling it, 
+ whether the content of this object will change or not is undefined.</p>
+
+ <p>In the current version, no value can be set in 
+ a normal-precision TIMESTAMP type field.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>column</code> - column number of the target field; a value from zero or greater than zero to a value less than the number of columns</dd><dd><code>fieldValue</code> - value of the target field</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the specified Column number is out of range.</dd>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if null is specified as a field value 
+ for the column to which NOT NULL constraints are set.</dd>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the value does not match the type and precision of the specified Column number.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
+</li>
+</ul>
 <a name="Row.html__setShort(int, short)">
 <!--   -->
 </a>
@@ -11581,7 +12109,10 @@ extends <a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a
 <pre>void&nbsp;setTimestamp(int&nbsp;column,
                 java.util.Date&nbsp;fieldValue)
                   throws <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></pre>
-<div class="block">Sets the TIMESTAMP value to the specified field.
+<div class="block">Sets a value in the specified normal-precision TIMESTAMP type field.
+
+ <p>In the current version, no value can be set in 
+ a high-precision TIMESTAMP type field.</p>
 
  <p>If the contents of a specified object is changed after it has been invoked,
  it is not defined whether the contents of this object will be changed or not.</p></div>
@@ -11589,7 +12120,7 @@ extends <a href="#Row.html__" title="interface in com.toshiba.mwcloud.gs">Row</a
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the specified Column number is out of range.</dd>
 <dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if <code>null</code> is specified as the field value for a column with a NOT NULL constraint.</dd>
-<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the type of the specified field does not match the type of the Column.</dd></dl>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the value does not match the type and precision of the specified Column number.</dd></dl>
 </li>
 </ul>
 <a name="Row.html__setTimestampArray(int, java.util.Date[])">
@@ -11841,16 +12372,32 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static &lt;K&gt;&nbsp;<a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs">RowKeyPredicate</a>&lt;K&gt;</code></td>
+<td class="colLast"><code><strong><a href="#RowKeyPredicate.html__create(java.lang.Class, com.toshiba.mwcloud.gs.TimeUnit)">create</a></strong>(java.lang.Class&lt;K&gt;&nbsp;keyType,
+      <a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;timePrecision)</code>
+<div class="block">Creates a matching condition where the <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a> corresponding to 
+ the specified <code>Class</code> and date/time precision is the RowKey type.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static <a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs">RowKeyPredicate</a>&lt;<a href="#Row.Key.html__" title="interface in com.toshiba.mwcloud.gs">Row.Key</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="#RowKeyPredicate.html__create(com.toshiba.mwcloud.gs.ContainerInfo)">create</a></strong>(<a href="#ContainerInfo.html__" title="class in com.toshiba.mwcloud.gs">ContainerInfo</a>&nbsp;info)</code>
 <div class="block">Creates an instance of <a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs"><code>RowKeyPredicate</code></a> based on the Row key column
  definition described in the specified <a href="#ContainerInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ContainerInfo</code></a>.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static <a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs">RowKeyPredicate</a>&lt;java.lang.Object&gt;</code></td>
 <td class="colLast"><code><strong><a href="#RowKeyPredicate.html__create(com.toshiba.mwcloud.gs.GSType)">create</a></strong>(<a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs">GSType</a>&nbsp;keyType)</code>
 <div class="block">Creates an instance of <a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs"><code>RowKeyPredicate</code></a> with the specified <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a> as the <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a> type.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs">RowKeyPredicate</a>&lt;java.lang.Object&gt;</code></td>
+<td class="colLast"><code><strong><a href="#RowKeyPredicate.html__create(com.toshiba.mwcloud.gs.GSType, com.toshiba.mwcloud.gs.TimeUnit)">create</a></strong>(<a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs">GSType</a>&nbsp;keyType,
+      <a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;timePrecision)</code>
+<div class="block">Creates a matching condition where the specified 
+ <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a> and date/time precision are the RowKey type.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -11956,8 +12503,10 @@ extends java.lang.Object</pre>
  with a single column, and the type of the Row key must be same as the specified
  <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a>.</p>
 
- <p>The type of <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a> that can be set is only that allowed
- by either one of the subinterfaces of <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a>.
+ <p>Also, the Column precision should match.</p>
+
+ <p>The type and precision of a RowKey that can be set are only 
+ those that are allowed by either one of the subinterfaces of <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a>.
  For the correspondence of <code>Class</code> to <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a>,
  see the definition of <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a>.</p>
 
@@ -11969,6 +12518,40 @@ extends java.lang.Object</pre>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the specified type is not always supported as a <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a></dd>
 <dd><code>java.lang.NullPointerException</code> - if <code>null</code> is specified in the argument.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a></dd></dl>
+</li>
+</ul>
+<a name="RowKeyPredicate.html__create(java.lang.Class, com.toshiba.mwcloud.gs.TimeUnit)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>create</h4>
+<pre>public static&nbsp;&lt;K&gt;&nbsp;<a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs">RowKeyPredicate</a>&lt;K&gt;&nbsp;create(java.lang.Class&lt;K&gt;&nbsp;keyType,
+                            <a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;timePrecision)
+                                 throws <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></pre>
+<div class="block">Creates a matching condition where the <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a> corresponding to 
+ the specified <code>Class</code> and date/time precision is the RowKey type.
+
+ <p>The target Container for which a matching condition is evaluated 
+ must have a RowKey composed of a single column, and the type of the 
+ RowKey must be the same as the type of the specified <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a>.</p>
+
+ <p>Also, the Column precision should match.</p>
+
+ <p>The type of a RowKey that can be set is only the one that is 
+ allowed by either one of the subinterfaces of <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a>
+ For more about the mapping between <code>Class</code> and <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a>, 
+ see the definition of a <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a>.</p>
+
+ <p>Use <a href="#RowKeyPredicate.html__create(com.toshiba.mwcloud.gs.ContainerInfo)"><code>create(ContainerInfo)</code></a> to create a matching condition regardless of 
+ the number of columns configuring a RowKey such as a composite Row key.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>keyType</code> - the <code>Class</code> that corresponds to the type of a RowKey used to evaluate the matching condition.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>newly created <a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs"><code>RowKeyPredicate</code></a></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the specified type is not supported as a RowKey at any time.</dd>
+<dd><code>java.lang.NullPointerException</code> - If <code>null</code> is specified as a <code>keyType</code> argument</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a></dd></dl>
 </li>
 </ul>
 <a name="RowKeyPredicate.html__create(com.toshiba.mwcloud.gs.ContainerInfo)">
@@ -12009,9 +12592,11 @@ extends java.lang.Object</pre>
  <p>The target Container must have a <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a>, and the type of the <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a> must be
  the specified <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a></p>
 
+ <p>Also, the Column precision should match.</p>
+ 
  <p>Unlike <a href="#RowKeyPredicate.html__create(java.lang.Class)"><code>create(Class)</code></a>, this method is used when the type of <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a> is not specified
- when the application is compiled. However, the criteria for checking the RowKey type when setting
- the condition is the same as <a href="#RowKeyPredicate.html__create(java.lang.Class)"><code>create(Class)</code></a>.</p>
+ when the application is compiled. However, the criteria for checking 
+ the RowKey type and precision when setting the condition is the same.</p>
 
  <p>The type of <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a> that can be set is only that allowed
  by either one of the subinterfaces of <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a>.</p></div>
@@ -12020,6 +12605,38 @@ extends java.lang.Object</pre>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the specified type is not always supported as a <a href="#RowKey.html__" title="annotation in com.toshiba.mwcloud.gs"><code>RowKey</code></a></dd>
 <dd><code>java.lang.NullPointerException</code> - if <code>null</code> is specified in the argument.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a></dd></dl>
+</li>
+</ul>
+<a name="RowKeyPredicate.html__create(com.toshiba.mwcloud.gs.GSType, com.toshiba.mwcloud.gs.TimeUnit)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>create</h4>
+<pre>public static&nbsp;<a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs">RowKeyPredicate</a>&lt;java.lang.Object&gt;&nbsp;create(<a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs">GSType</a>&nbsp;keyType,
+                                       <a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;timePrecision)
+                                                throws <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></pre>
+<div class="block">Creates a matching condition where the specified 
+ <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a> and date/time precision are the RowKey type.
+
+ <p>The target Container for which a matching condition is evaluated 
+ must have a RowKey, and the type of the RowKey must be the specified <a href="#GSType.html__" title="enum in com.toshiba.mwcloud.gs"><code>GSType</code></a>.</p>
+
+ <p>Also, the Column precision should match.</p>
+
+ <p>Unlike <a href="#RowKeyPredicate.html__create(java.lang.Class)"><code>create(Class)</code></a>, this method is appropriate for use when 
+ the type of RowKey is not specified when the application is compiled. However, 
+ the criteria for checking the RowKey type and precision when setting the condition is the same.</p>
+
+ <p>The type of a RowKey that can be set is only the one that is 
+ allowed by either one of the subinterfaces of <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a>.</p></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>keyType</code> - the type of a RowKey used to evaluate the matching condition.</dd><dd><code>timePrecision</code> - the date/time precision of a RowKey used to evaluate the matching condition.</dd>
+<dt><span class="strong">Returns:</span></dt><dd>newly created <a href="#RowKeyPredicate.html__" title="class in com.toshiba.mwcloud.gs"><code>RowKeyPredicate</code></a></dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - if the specified type is not supported as a RowKey at any time.</dd>
+<dd><code>java.lang.NullPointerException</code> - If <code>null</code>がis specified as a <code>keyType</code> argument</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a></dd></dl>
 </li>
 </ul>
 <a name="RowKeyPredicate.html__getDistinctKeys()">
@@ -12204,30 +12821,36 @@ extends java.io.Closeable</pre>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="#ContainerInfo.html__" title="class in com.toshiba.mwcloud.gs">ContainerInfo</a></code></td>
+<td class="colLast"><code><strong><a href="#RowSet.html__getSchema()">getSchema</a></strong>()</code>
+<div class="block">Retrieves a schema corresponding to this row set.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="#RowSet.html__hasNext()">hasNext</a></strong>()</code>
 <div class="block">Returns TRUE if a Row set has at least one Row ahead of the current cursor position.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="#RowSet.html__" title="type parameter in RowSet">R</a></code></td>
 <td class="colLast"><code><strong><a href="#RowSet.html__next()">next</a></strong>()</code>
 <div class="block">Moves the cursor to the next Row in a Row set and returns the Row object at the moved position.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#RowSet.html__remove()">remove</a></strong>()</code>
 <div class="block">Deletes the Row at the current cursor position.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="#RowSet.html__size()">size</a></strong>()</code>
 <div class="block">Returns the size, namely the number of Rows at the time of creating a Row set.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="#RowSet.html__update(R)">update</a></strong>(<a href="#RowSet.html__" title="type parameter in RowSet">R</a>&nbsp;rowObj)</code>
 <div class="block">Updates the values except a Row key of the Row at the cursor position, using the specified Row object.</div>
@@ -12264,6 +12887,30 @@ extends java.io.Closeable</pre>
 <dd><code>close</code>&nbsp;in interface&nbsp;<code>java.io.Closeable</code></dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - It will not be thrown in the current version.</dd><dt><span class="strong">See Also:</span></dt><dd><code>Closeable.close()</code></dd></dl>
+</li>
+</ul>
+<a name="RowSet.html__getSchema()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSchema</h4>
+<pre><a href="#ContainerInfo.html__" title="class in com.toshiba.mwcloud.gs">ContainerInfo</a>&nbsp;getSchema()
+                        throws <a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></pre>
+<div class="block">Retrieves a schema corresponding to this row set.
+
+ <p><a href="#ContainerInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ContainerInfo</code></a> in which information about column layout including 
+ whether RowKey is included is the only information that is set is obtained.
+ Any other information such as information about container names, container 
+ types, index settings, and time series configuration options is not included. </p>
+
+ <p>In the current version, <code>null</code> is returned if this Row set is configured so as 
+ to handle rows for the <a href="#AggregationResult.html__" title="interface in com.toshiba.mwcloud.gs"><code>AggregationResult</code></a> instance and if this Row set does 
+ not contain any Row.</p></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd><a href="#ContainerInfo.html__" title="class in com.toshiba.mwcloud.gs"><code>ContainerInfo</code></a> that only has container information about schemas.</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code><a href="#GSException.html__" title="class in com.toshiba.mwcloud.gs">GSException</a></code> - not issued in the current version.</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
 </li>
 </ul>
 <a name="RowSet.html__hasNext()">
@@ -12595,6 +13242,89 @@ the order they are declared</dd></dl>
 </div>
 </div>
 <!-- ========= END OF CLASS DATA ========= -->
+<a name="TimePrecision.html__"><!-- --></a><!-- ========= END OF TOP NAVBAR ========= -->
+<!-- ======== START OF CLASS DATA ======== -->
+<div class="header">
+<hr/><div class="subTitle"><a href="#package-summary.html__">com.toshiba.mwcloud.gs</a></div>
+<h2 title="Annotation Type TimePrecision" class="title">Annotation Type TimePrecision</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<hr/>
+<br/>
+<pre>@Retention(value=RUNTIME)
+@Target(value={FIELD,METHOD})
+public @interface <span class="strong">TimePrecision</span></pre>
+<div class="block">Sets date/time precision in row fields to be mapped during 
+ <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs"><code>Container</code></a> operations.
+
+ <p>A row field that does not have this annotation is considered 
+ not to have the specification of date/time precision.</p>
+
+ <p>The mapping between time and date precision and column types 
+ is as specified in <a href="#ColumnInfo.html__getTimePrecision()"><code>ColumnInfo.getTimePrecision()</code></a>.</p></div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- =========== ANNOTATION TYPE REQUIRED MEMBER SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="TimePrecision.html__annotation_type_required_element_summary">
+<!--   -->
+</a>
+<h3>Required Element Summary</h3>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Required Element Summary table, listing required elements, and an explanation">
+<caption><span>Required Elements</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Required Element and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a></code></td>
+<td class="colLast"><code><strong><a href="#TimePrecision.html__value()">value</a></strong></code>
+<div class="block">Returns date/time precision</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ ANNOTATION TYPE MEMBER DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="TimePrecision.html__annotation_type_element_detail">
+<!--   -->
+</a>
+<h3>Element Detail</h3>
+<a name="TimePrecision.html__value()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>value</h4>
+<pre>public abstract&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;value</pre>
+<div class="block">Returns date/time precision</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>date/time precision</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- ========= END OF CLASS DATA ========= -->
 <a name="TimeSeries.BindType.html__"><!-- --></a><!-- ========= END OF TOP NAVBAR ========= -->
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
@@ -12719,6 +13449,8 @@ extends <a href="#Container.html__" title="interface in com.toshiba.mwcloud.gs">
 
  <p>Generally, in extraction of a specific range and aggregation operations on TimeSeries,
  more efficient implementation is selected than on <a href="#Collection.html__" title="interface in com.toshiba.mwcloud.gs"><code>Collection</code></a>.</p>
+
+ <p>A row key consists of only a single normal-precision TIMESTAMP type column.</p>
 
  <p>There are some limitations on row operations unlike <a href="#Collection.html__" title="interface in com.toshiba.mwcloud.gs"><code>Collection</code></a>.
  If a compression option based on <a href="#TimeSeriesProperties.html__" title="class in com.toshiba.mwcloud.gs"><code>TimeSeriesProperties</code></a>
@@ -13683,7 +14415,7 @@ implements java.lang.Cloneable</pre>
  Expired row data shall be released at the point they are collected only
  when the period equivalent to the division number is reached.</p>
 
- <p>See the GridDB Technical Reference for the upper limit
+ <p>See the GridDB Features Reference for the upper limit
  of the division number. It will be failed if the division
  number exceeds the size limit.</p>
 
@@ -13727,7 +14459,7 @@ implements java.lang.Cloneable</pre>
  <li><a href="#GSType.html__DOUBLE"><code>GSType.DOUBLE</code></a></li>
  </ul>
 
- <p>See the GridDB Technical Reference for the upper limit
+ <p>See the GridDB Features Reference for the upper limit
  of the number of columns on which the parameters can be
  specified. The number of options that is over the limit
  can be created, but the TimeSeries cannot be created for
@@ -13833,25 +14565,49 @@ extends java.lang.Enum&lt;<a href="#TimeUnit.html__" title="enum in com.toshiba.
 <th class="colOne" scope="col">Enum Constant and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="#TimeUnit.html__DAY">DAY</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="#TimeUnit.html__DAY">DAY</a></strong></code>
+<div class="block">Indicates the time is in days.</div>
+</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><strong><a href="#TimeUnit.html__HOUR">HOUR</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="#TimeUnit.html__HOUR">HOUR</a></strong></code>
+<div class="block">Indicates the time is in hours.</div>
+</td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="#TimeUnit.html__MILLISECOND">MILLISECOND</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="#TimeUnit.html__MICROSECOND">MICROSECOND</a></strong></code>
+<div class="block">Indicates the time is in microseconds.</div>
+</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><strong><a href="#TimeUnit.html__MINUTE">MINUTE</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="#TimeUnit.html__MILLISECOND">MILLISECOND</a></strong></code>
+<div class="block">Indicates the time is in milliseconds.</div>
+</td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="#TimeUnit.html__MONTH">MONTH</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="#TimeUnit.html__MINUTE">MINUTE</a></strong></code>
+<div class="block">Indicates the time is in minutes.</div>
+</td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><code><strong><a href="#TimeUnit.html__SECOND">SECOND</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="#TimeUnit.html__MONTH">MONTH</a></strong></code>
+<div class="block">Indicates the time is in months.</div>
+</td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><code><strong><a href="#TimeUnit.html__YEAR">YEAR</a></strong></code>&nbsp;</td>
+<td class="colOne"><code><strong><a href="#TimeUnit.html__NANOSECOND">NANOSECOND</a></strong></code>
+<div class="block">Indicates the time is in nanoseconds.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colOne"><code><strong><a href="#TimeUnit.html__SECOND">SECOND</a></strong></code>
+<div class="block">Indicates the time is in seconds.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><strong><a href="#TimeUnit.html__YEAR">YEAR</a></strong></code>
+<div class="block">Indicates the time is in years.</div>
+</td>
 </tr>
 </table>
 </li>
@@ -13917,6 +14673,7 @@ the order they are declared.</div>
 <li class="blockList">
 <h4>DAY</h4>
 <pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> DAY</pre>
+<div class="block">Indicates the time is in days.</div>
 </li>
 </ul>
 <a name="TimeUnit.html__HOUR">
@@ -13926,6 +14683,19 @@ the order they are declared.</div>
 <li class="blockList">
 <h4>HOUR</h4>
 <pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> HOUR</pre>
+<div class="block">Indicates the time is in hours.</div>
+</li>
+</ul>
+<a name="TimeUnit.html__MICROSECOND">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>MICROSECOND</h4>
+<pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> MICROSECOND</pre>
+<div class="block">Indicates the time is in microseconds.</div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
 </li>
 </ul>
 <a name="TimeUnit.html__MILLISECOND">
@@ -13935,6 +14705,7 @@ the order they are declared.</div>
 <li class="blockList">
 <h4>MILLISECOND</h4>
 <pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> MILLISECOND</pre>
+<div class="block">Indicates the time is in milliseconds.</div>
 </li>
 </ul>
 <a name="TimeUnit.html__MINUTE">
@@ -13944,6 +14715,7 @@ the order they are declared.</div>
 <li class="blockList">
 <h4>MINUTE</h4>
 <pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> MINUTE</pre>
+<div class="block">Indicates the time is in minutes.</div>
 </li>
 </ul>
 <a name="TimeUnit.html__MONTH">
@@ -13953,6 +14725,19 @@ the order they are declared.</div>
 <li class="blockList">
 <h4>MONTH</h4>
 <pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> MONTH</pre>
+<div class="block">Indicates the time is in months.</div>
+</li>
+</ul>
+<a name="TimeUnit.html__NANOSECOND">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>NANOSECOND</h4>
+<pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> NANOSECOND</pre>
+<div class="block">Indicates the time is in nanoseconds.</div>
+<dl><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
 </li>
 </ul>
 <a name="TimeUnit.html__SECOND">
@@ -13962,6 +14747,7 @@ the order they are declared.</div>
 <li class="blockList">
 <h4>SECOND</h4>
 <pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> SECOND</pre>
+<div class="block">Indicates the time is in seconds.</div>
 </li>
 </ul>
 <a name="TimeUnit.html__YEAR">
@@ -13971,6 +14757,7 @@ the order they are declared.</div>
 <li class="blockList">
 <h4>YEAR</h4>
 <pre>public static final&nbsp;<a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a> YEAR</pre>
+<div class="block">Indicates the time is in years.</div>
 </li>
 </ul>
 </li>
@@ -14111,27 +14898,51 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><strong><a href="#TimestampUtils.html__format(java.util.Date, java.util.TimeZone)">format</a></strong>(java.util.Date&nbsp;timestamp,
       java.util.TimeZone&nbsp;zone)</code>
-<div class="block">Using the specified time zone setting, returns the string representing the
- specified time, according to the TIMESTAMP value notation of TQL.</div>
+<div class="block">Using the specified time zone setting, returns the string representation 
+ of time, according to the normal-precision TIMESTAMP value notation of TQL.</div>
 </td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><strong><a href="#TimestampUtils.html__formatPrecise(java.sql.Timestamp, java.util.TimeZone)">formatPrecise</a></strong>(java.sql.Timestamp&nbsp;timestamp,
+             java.util.TimeZone&nbsp;zone)</code>
+<div class="block">Using the specified time zone setting, returns the string representation 
+ of time, according to the high-precision TIMESTAMP value notation.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static java.text.DateFormat</code></td>
 <td class="colLast"><code><strong><a href="#TimestampUtils.html__getFormat()">getFormat</a></strong>()</code>
 <div class="block">Returns the date format conforming to the TIMESTAMP value notation of TQL.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static java.text.DateFormat</code></td>
 <td class="colLast"><code><strong><a href="#TimestampUtils.html__getFormat(java.util.TimeZone)">getFormat</a></strong>(java.util.TimeZone&nbsp;zone)</code>
 <div class="block">Using the specified time zone setting, returns the string representing the
  specified time, according to the TIMESTAMP value notation of TQL.</div>
 </td>
 </tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static java.text.DateFormat</code></td>
+<td class="colLast"><code><strong><a href="#TimestampUtils.html__getFormat(java.util.TimeZone, com.toshiba.mwcloud.gs.TimeUnit)">getFormat</a></strong>(java.util.TimeZone&nbsp;zone,
+         <a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;timePrecision)</code>
+<div class="block">Using the specified time zone setting and date/time precision, retrieves 
+ the date format according to the TIMESTAMP value notation of TQL.</div>
+</td>
+</tr>
 <tr class="altColor">
 <td class="colFirst"><code>static java.util.Date</code></td>
 <td class="colLast"><code><strong><a href="#TimestampUtils.html__parse(java.lang.String)">parse</a></strong>(java.lang.String&nbsp;source)</code>
-<div class="block">Returns a <code>Date</code> object corresponding to the specified string, according to the TIMESTAMP value notation of TQL.</div>
+<div class="block">Returns <code>Date</code> corresponding to the specified string, according 
+ to the normal-precision TIMESTAMP value notation of TQL.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static java.sql.Timestamp</code></td>
+<td class="colLast"><code><strong><a href="#TimestampUtils.html__parsePrecise(java.lang.String)">parsePrecise</a></strong>(java.lang.String&nbsp;source)</code>
+<div class="block">Returns <code>Timestamp</code> corresponding to the specified string, according 
+ to the normal-precision or high-precision TIMESTAMP value notation.</div>
 </td>
 </tr>
 </table>
@@ -14169,6 +14980,8 @@ extends java.lang.Object</pre>
 
  <p>An earlier time than the specified time can be obtained by specifying a negative value as <code>amount</code>.</p>
 
+ <p>Microsecond/nanosecond precision is not supported.</p>
+
  <p>The current version uses the UTC timezone for calculation.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>timestamp</code> - target time</dd><dd><code>amount</code> - value to be added</dd><dd><code>timeUnit</code> - unit of value to be added</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The added value</dd>
@@ -14188,13 +15001,16 @@ extends java.lang.Object</pre>
                  java.util.TimeZone&nbsp;zone)</pre>
 <div class="block">Adds a fixed value to the time using the specified time zone setting.
 
+ <p>If unsupported timeUnit is specified</p>
+
  <p>Depending on the unit of time used for calculation, the time zone
  setting may not be affected.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>timestamp</code> - target time</dd><dd><code>amount</code> - value to be added</dd><dd><code>timeUnit</code> - unit of value to be added</dd><dd><code>zone</code> - time zone setting used for calculation</dd>
 <dt><span class="strong">Returns:</span></dt><dd>The added value</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code>java.lang.NullPointerException</code> - when <code>null</code> is specified for
- <code>timestamp</code>, <code>timeUnit</code></dd><dt><span class="strong">Since:</span></dt>
+ <code>timestamp</code>, <code>timeUnit</code></dd>
+<dd><code>java.lang.IllegalArgumentException</code> - If unsupported <code>timeUnit</code> is specified</dd><dt><span class="strong">Since:</span></dt>
   <dd>4.3</dd></dl>
 </li>
 </ul>
@@ -14243,13 +15059,32 @@ extends java.lang.Object</pre>
 <h4>format</h4>
 <pre>public static&nbsp;java.lang.String&nbsp;format(java.util.Date&nbsp;timestamp,
                       java.util.TimeZone&nbsp;zone)</pre>
-<div class="block">Using the specified time zone setting, returns the string representing the
- specified time, according to the TIMESTAMP value notation of TQL.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>timestamp</code> - target time</dd><dd><code>zone</code> - time zone setting used for calculation</dd>
+<div class="block">Using the specified time zone setting, returns the string representation 
+ of time, according to the normal-precision TIMESTAMP value notation of TQL.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>timestamp</code> - target time</dd><dd><code>zone</code> - time zone setting used for calculation, or null</dd>
 <dt><span class="strong">Returns:</span></dt><dd>corresponding string representation</dd>
 <dt><span class="strong">Throws:</span></dt>
-<dd><code>java.lang.NullPointerException</code> - when <code>null</code> is specified as argument</dd><dt><span class="strong">Since:</span></dt>
+<dd><code>java.lang.NullPointerException</code> - If <code>null</code> is specified as a timestamp argument</dd><dt><span class="strong">Since:</span></dt>
   <dd>4.3</dd>
+<dt><span class="strong">See Also:</span></dt><dd><a href="#TimestampUtils.html__format(java.util.Date)"><code>format(Date)</code></a></dd></dl>
+</li>
+</ul>
+<a name="TimestampUtils.html__formatPrecise(java.sql.Timestamp, java.util.TimeZone)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>formatPrecise</h4>
+<pre>public static&nbsp;java.lang.String&nbsp;formatPrecise(java.sql.Timestamp&nbsp;timestamp,
+                             java.util.TimeZone&nbsp;zone)</pre>
+<div class="block">Using the specified time zone setting, returns the string representation 
+ of time, according to the high-precision TIMESTAMP value notation.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>timestamp</code> - the target time</dd><dd><code>zone</code> - time zone setting used for calculation, or <code>null</code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>the corresponding string representation</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code>java.lang.NullPointerException</code> - If <code>null</code> is specified as a 
+ <code>timestamp</code> argument</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd>
 <dt><span class="strong">See Also:</span></dt><dd><a href="#TimestampUtils.html__format(java.util.Date)"><code>format(Date)</code></a></dd></dl>
 </li>
 </ul>
@@ -14277,27 +15112,73 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;java.text.DateFormat&nbsp;getFormat(java.util.TimeZone&nbsp;zone)</pre>
 <div class="block">Using the specified time zone setting, returns the string representing the
  specified time, according to the TIMESTAMP value notation of TQL.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>zone</code> - applicable time zone settings</dd>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>zone</code> - applicable time zone setting, or <code>null</code></dd>
 <dt><span class="strong">Returns:</span></dt><dd>date format</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code>java.lang.NullPointerException</code> - when <code>null</code> is specified as argument</dd><dt><span class="strong">Since:</span></dt>
   <dd>4.3</dd></dl>
 </li>
 </ul>
+<a name="TimestampUtils.html__getFormat(java.util.TimeZone, com.toshiba.mwcloud.gs.TimeUnit)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getFormat</h4>
+<pre>public static&nbsp;java.text.DateFormat&nbsp;getFormat(java.util.TimeZone&nbsp;zone,
+                             <a href="#TimeUnit.html__" title="enum in com.toshiba.mwcloud.gs">TimeUnit</a>&nbsp;timePrecision)</pre>
+<div class="block">Using the specified time zone setting and date/time precision, retrieves 
+ the date format according to the TIMESTAMP value notation of TQL.
+
+ <p>Specification of date/time precision is supported only in the following cases.</p>
+ <ul>
+ <li><a href="#TimeUnit.html__SECOND"><code>TimeUnit.SECOND</code></a></li>
+ <li><a href="#TimeUnit.html__MILLISECOND"><code>TimeUnit.MILLISECOND</code></a></li>
+ <li><a href="#TimeUnit.html__MICROSECOND"><code>TimeUnit.MICROSECOND</code></a></li>
+ <li><a href="#TimeUnit.html__NANOSECOND"><code>TimeUnit.NANOSECOND</code></a></li>
+ <li><code>null</code> (interpreted as if <a href="#TimeUnit.html__MILLISECOND"><code>TimeUnit.MILLISECOND</code></a> 
+ is specified)</li>
+ </ul></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>zone</code> - applicable time zone setting, or <code>null</code></dd><dd><code>timePrecision</code> - applicable date/time precision, or <code>null</code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>date format</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code>java.lang.IllegalArgumentException</code> - If unsupported date/time precision is specified</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
+</li>
+</ul>
 <a name="TimestampUtils.html__parse(java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>parse</h4>
 <pre>public static&nbsp;java.util.Date&nbsp;parse(java.lang.String&nbsp;source)
                             throws java.text.ParseException</pre>
-<div class="block">Returns a <code>Date</code> object corresponding to the specified string, according to the TIMESTAMP value notation of TQL.</div>
+<div class="block">Returns <code>Date</code> corresponding to the specified string, according 
+ to the normal-precision TIMESTAMP value notation of TQL.</div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>source</code> - string representation of target time</dd>
 <dt><span class="strong">Returns:</span></dt><dd><code>Date</code> object corresponding to the specified string</dd>
 <dt><span class="strong">Throws:</span></dt>
 <dd><code>java.text.ParseException</code> - if the specified string does not match any time representation.</dd>
 <dd><code>java.lang.NullPointerException</code> - when <code>null</code> is specified as argument</dd></dl>
+</li>
+</ul>
+<a name="TimestampUtils.html__parsePrecise(java.lang.String)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>parsePrecise</h4>
+<pre>public static&nbsp;java.sql.Timestamp&nbsp;parsePrecise(java.lang.String&nbsp;source)
+                                       throws java.text.ParseException</pre>
+<div class="block">Returns <code>Timestamp</code> corresponding to the specified string, according 
+ to the normal-precision or high-precision TIMESTAMP value notation.</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>source</code> - string representation of the target time</dd>
+<dt><span class="strong">Returns:</span></dt><dd><code>Timestamp</code> corresponding to the specified string</dd>
+<dt><span class="strong">Throws:</span></dt>
+<dd><code>java.text.ParseException</code> - If a string that does not match the string notation of time.</dd>
+<dd><code>java.lang.NullPointerException</code> - If <code>null</code> is specified as an argument</dd><dt><span class="strong">Since:</span></dt>
+  <dd>5.3</dd></dl>
 </li>
 </ul>
 </li>
@@ -15850,7 +16731,7 @@ public class Sample5 {
 
 <p>
 Describe the range of values such as the upper limit of the value, etc.
-Refer to GridDB Technical Reference for the restriction values of the system.
+Refer to GridDB Features Reference for the restriction values of the system.
 </p>
 
 </div>
@@ -15929,7 +16810,7 @@ The range of values of objects mapped onto the basic types through API may be di
 <li>Other product names are trademarks or registered trademarks of the respective owners.
 
 <p>
-                            Copyright © 2013-2019 TOSHIBA DIGITAL SOLUTIONS CORPORATION
+                            Copyright © 2017 TOSHIBA DIGITAL SOLUTIONS CORPORATION
 </p></li>
 </ul>
 
