@@ -33,6 +33,7 @@ Start right away with the standard SQL, and connect to your favourite applicatio
 |[GridDB TQL Reference](/manuals/GridDB_TQL_Reference.md)| This manual describes TQL (query language) for the application development of GridDB.|
 |[GridDB JDBC driver guide](/manuals/GridDB_JDBC_Driver_UserGuide.md)| This manual describes JDBC driver for the application development of GridDB. |
 |[GridDB SQL Reference](/manuals/GridDB_SQL_Reference.md)| This manual describes SQL (query language) for the application development of GridDB. |
+|[GridDB Programming Guide](/manuals/GridDB_ProgrammingGuide.md)| This manual describes programing guide of Java API/C API/JDBC driver for the application development of GridDB. |
 
 
 
