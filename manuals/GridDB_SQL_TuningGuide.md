@@ -4,7 +4,7 @@
 * [Introduction](#Introduction)
 * [Tuning steps](#Tuning-steps)
 * [Optimize SQL](#Optimize-SQL)
-* [SQL plan](#SQL-plan)
+* [SQL plan](#label_plan)
 
 ---
 # Introduction
