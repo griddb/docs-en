@@ -141,7 +141,7 @@ The container created with the NoSQL interface client is handled as follows usin
 
 
 [memo]
-   - For TIMESTAMP, precision information for NoSQL TIMESTAMP needs to be set by checking the precision value (i.e., p in TIMESTAMP(p)) of TIMESTAMP with SQL precision. For how to set the precision information, see "GridDB Java API Reference" ([GridDB_Java_API_Reference.html](GridDB_Java_API_Reference.html)) or "GridDB Java API Reference" ([GridDB_C_API_Reference.html](GridDB_C_API_Reference.html)).
+   - For TIMESTAMP, precision information for NoSQL TIMESTAMP needs to be set by checking the precision value (i.e., p in TIMESTAMP(p)) of TIMESTAMP with SQL precision. For how to set the precision information, see "GridDB Java API Reference" ([GridDB_Java_API_Reference.html](GridDB_Java_API_Reference.html)) or "GridDB C API Reference" ([GridDB_C_API_Reference.html](GridDB_C_API_Reference.html)).
 
 ### Treatment of the data type not supported by SQL
 
@@ -297,6 +297,8 @@ Create a table.
 - Composite primary key can be set to a table (collection) by setting the primary key after describing the column definition. The composite primary key must be set to the columns which are continuous from the first column and can be set up to 16 columns. It cannot be set together with the PRIMARY KEY as a column constraint, cannot be set to a time series table (time series container).
 - See [GridDB Features Reference](GridDB_FeaturesReference.md) for details of time series table (Time series container).
 - Options related to data affinity can be specified in the format "WITH (property key = property value, ...)".
+
+
 <a id="label_data_affinity_property"></a>
 
   | Function | Item | Property key | Property value type                             |
@@ -349,8 +351,7 @@ See [GridDB Features Reference](GridDB_FeaturesReference.md) for details of each
 ***Option specifications***
 
 ****Data affinity****
-- Options related to data affinity can be specified in the format "WITH (property key = property value, ...)".
-  The options that can be specified are same as [normal table](#label_data_affinity_property).
+- Options related to data affinity can be specified in the format "WITH (property key = property value, ...)". The options that can be specified are same as [normal table](#label_data_affinity_property).
 
 **Examples**
 
@@ -394,8 +395,13 @@ See [GridDB Features Reference](GridDB_FeaturesReference.md) for details of each
   | LONG                  | from 1000 to 2<sup>63</sup>-1 |
   | TIMESTAMP             | 1 or more                     |
 
-- If the column of TIMESTAMP (including TIMESTAMP with specified precision) is specified, the interval unit should also be specified. DAY is the only value that can be specified as the interval unit.
+- If the column of TIMESTAMP (including TIMESTAMP with specified precision) is specified, the interval unit should also be specified. DAY and HOUR are the values that can be specified as the interval unit.
 - The interval unit cannot be specified for columns of any types other than above.
+
+[Memo]
+
+- When a new interval is created, a data partition (container) that corresponds to that particular interval will also be generated. The partitioning feature has the benefit of properly reducing the data size that one data partition manages and leveraging parallelism, thereby improving performance. At the same time, however, it has also the disadvantage in that an increase in the number of data partitions incurs an overhead in merging them, which in turn leads to memory increase and performance degrade.
+- By default, GridDB results in an error at the point when 10,000 data partitions are generated in a table.  The configuration file value for the upper limit on the number of data partitions to be generated can be modified. For details, see the [GridDB Features Reference](GridDB_FeaturesReference.md).
 
 ***Option specifications***
 
@@ -413,7 +419,6 @@ See [GridDB Features Reference](GridDB_FeaturesReference.md) for details of each
   | | Expiration time unit | expiration_time_unit | STRING <br>(The following five types can be specified. <br>DAY / HOUR / MINUTE / SECOND / MILLISECOND ) | Optional (default: DAY) |
   | | Expiration division count | expiration_division_count | INTEGER           | Optional (default: 8) |
 
-
 - The partition expiry release can only be specified for followings:
   - Timeseries table (timeseries container)
   - Table (collection) whose partitioning key is TIMESTAMP (including TIMESTAMP with specified precision) .
@@ -422,7 +427,7 @@ See [GridDB Features Reference](GridDB_FeaturesReference.md) for details of each
 [memo]
  - The row key for a timeseries container is fixed to millisecond-precision TIMESTAMP; TIMESTAMP with any other precision is not allowed.
 
-****Data partition placement***
+***Data partition placement***
 - The option to determine where to place data partitions corresponding to each date can be specified in the format "WITH (property key = property value, ...)".
 
   | Function                | Item                                         | Property key        | Property value type   | Required or optional when setting data partition placement |
@@ -498,17 +503,20 @@ See [GridDB Features Reference](GridDB_FeaturesReference.md) for details of each
   | LONG                  | from 1000 \* division_count to -2<sup>63</sup>-1 |
   | TIMESTAMP             | 1 or more                                      |
 
-  - If the column of TIMESTAMP is specified, it is also required to specify the interval unit. DAY is the only value that can be specified as the interval unit.
+  - If the column of TIMESTAMP is specified, it is also required to specify the interval unit.If the column of TIMESTAMP is specified, it is also required to specify the interval unit. DAY and HOUR are the values that can be specified as the interval unit.
   - The interval unit cannot be specified for any types other than TIMESTAMP.
 
 - Specify the value from 1 to 1024 for "division_count".
 - The partitioning key requires the primary key. To set a key other than the primary key, the restriction in the configuration file need to be removed. For details, refer to the cluster definition file settings in [GridDB Features Reference](GridDB_FeaturesReference.md).
 - The column specified as partitioning key cannot be updated.
 
+[Memo]
+- Like interval partitions, the number of data partitions of one table that are generated has an upper limit. To change the number, see the section on the "setting of the cluster definition file" in the [GridDB Features Reference](GridDB_FeaturesReference.md).
+- Note that unlike interval partitions, for interval hash partitions, the same number of data partitions are generated for a single interval as the number of hash partitions.
+
 ***Option specifications***
 
 ****Data affinity****
-
 - Options related to data affinity can be specified in the format "WITH (property key = property value, ...)".
   The options that can be specified are same as [normal table](#label_data_affinity_property).
 
@@ -522,7 +530,6 @@ See [GridDB Features Reference](GridDB_FeaturesReference.md) for details of each
   | | Expiration time | expiration_time | INTEGER              | Required |
   | | Expiration time unit | expiration_time_unit | STRING <br>(The following five types can be specified. <br>DAY / HOUR / MINUTE / SECOND / MILLISECOND ) | Optional (default: DAY) |
   | | Expiration division count | expiration_division_count | INTEGER           | Optional (default: 8) |
-
 
 
 **Examples**
@@ -852,7 +859,7 @@ Change an existing specified column.
 **Specifications**
 
 - An error will occur if the column name before renaming is not in the specified table.
-- An error will occur if the column name after renaming is already  in the specified table.
+- An error will occur if the column name after renaming is already in the specified table.
 
 **Examples**
 
@@ -1463,15 +1470,16 @@ The following functions are available for SQL statements.
 |      | [SUM](#sumtotal)                       | Return a sum of values.     |
 |      | [TOTAL](#sumtotal)                     | Return a sum of values.     |
 |      | [GROUP_CONCAT](#group_concat)         | Connect values.     |
-|      | [STDDEV_SAMP](#stddev_samp)           | Returns the sample standard deviation     |
-|      | [STDDEV](#stddevstddev0)               | Returns the sample standard deviation     |
-|      | [STDDEV0](#stddevstddev0)              | Returns the sample standard deviation     |
-|      | [STDDEV_POP](#stddev_pop)             | Returns the population standard deviation     |
-|      | [VAR_SAMP](#var_samp)                 | Returns the sample variance     |
-|      | [VARIANCE](#variancevariance0)         | Returns the sample variance     |
-|      | [VARIANCE0](#variancevariance0)        | Returns the sample variance     |
-|      | [VAR_POP](#var_pop)                   | Returns the population variance     |
-|      | [MEDIAN](#MEDIAN)                      | Returns the median     |
+|      | [STDDEV_SAMP](#stddev_samp)           | Return the sample standard deviation.     |
+|      | [STDDEV](#stddevstddev0)               | Return the sample standard deviation.     |
+|      | [STDDEV0](#stddevstddev0)              | Return the sample standard deviation.     |
+|      | [STDDEV_POP](#stddev_pop)             | Return the population standard deviation.     |
+|      | [VAR_SAMP](#var_samp)                 | Return the sample variance.     |
+|      | [VARIANCE](#variancevariance0)         | Return the sample variance.     |
+|      | [VARIANCE0](#variancevariance0)        | Return the sample variance.     |
+|      | [VAR_POP](#var_pop)                   | Return the population variance.     |
+|      | [MEDIAN](#MEDIAN)                      | Return the median.     |
+|      | [PERCENTILE_CONT](#PERCENTILE_CONT)  | Return the percentile value.     |
 | [Mathematical](#mathematical-functions) | [ABS](#abs)                            | Return an absolute value.     |
 |      | [ROUND](#round)                        | Round off.     |
 |      | [RANDOM](#random)                      | Return a random number.     |
@@ -2039,7 +2047,9 @@ Return a value that corresponds to the percentile specified by the *percentile* 
 - For the *percentile*, specify a DOUBLE constant greater than or equal to zero and less than or equal to 1. 
 - NULL values that exist in *sort_key* are not aggregated.
 - NULL is returned only when there is nothing to be aggregated.
-- PERCENTILE_CONT cannot be used at the same time with the WINDOW function and OVER clause within the same SELECT clause, the MEDIAN function, and other PERCENTILE_CONT's. 
+- PERCENTILE_CONT cannot be used at the same time with the WINDOW function and OVER clause within the same SELECT clause, the MEDIAN function, and other PERCENTILE_CONT's.
+
+Example:
 ```example
 SELECT PERCENTILE_CONT(0.25) WITHIN GROUP( ORDER BY age ) FROM employees;
 Result: 18
@@ -3021,9 +3031,11 @@ Retrieve the value of time field "time_field" from the time "timestamp". The tim
   - YEAR | MONTH | DAY | HOUR | MINUTE | SECOND | MILLISECOND | MICROSECOND | NANOSECOND | DAY_OF_WEEK | DAY_OF_YEAR
     - DAY_OF_WEEK is from Sunday, as 0, to Saturday, as 6.
     - DAY_OF_YEAR is from January first, as 1, to December 31th, as 365 or 366.
-- For the timezone argument, specify the time zone (Z|±hh:mm|±hhmm),
+    - If MILLISECOND, MICROSECOND, or NANOSECOND is specified, the time value will include all decimal digits.
+- For the *timezone* argument, specify the time zone (Z|±hh:mm|±hhmm).
 - If the time zone is specified at the time of connection, the offset calculated value is returned. If it is also specified in the argument timezone, the one specified in the argument will be used.
 - The result is of a LONG type.
+
 
 Example:
 ```example
@@ -3139,7 +3151,6 @@ SELECT TIMESTAMP_TRUNC(DAY, MAKE_TIMESTAMP(2019, 5, 15), '-01:00');
 Result: 2019-05-14T01:00:00.000Z
 
 ```
-
 
 
 <a id="window_function"></a>
@@ -3845,6 +3856,8 @@ FROM employees;
 
 In GridDB, specifying the hints indicating the execution plan in the query makes it possible to control the execution plan without changing the SQL statement.
 
+See [GridDB SQL Tuning Guide](GridDB_SQL_TuningGuide.md) to tune with hint clauses.
+
 
 
 ### Error handling
@@ -3951,7 +3964,6 @@ Data about partitioned tables can be obtained from this metatable.
 | CLUSTER_PARTITION_INDEX | Cluster partition number            | INTEGER |
 | CLUSTER_NODE_ADDRESS | Node address:port number            | STRING |
 | WORKER_INDEX | Processing thread number            | INTEGER |
-
 
 **Specifications**
 
