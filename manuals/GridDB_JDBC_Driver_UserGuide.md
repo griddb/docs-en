@@ -183,7 +183,7 @@ To include the time zone in the URL, add it to the end of the URL as follows:
 ```
 
 
-To include also the user name and the password in the URL, use the following method.
+To also include the user name and the password in the URL, use the following method.
 
 ``` example
 ?user=(user name)&password=(password)&applicationName=(application name)&timeZone=(time zone)
@@ -240,7 +240,7 @@ The following functions corresponding to some of the functions of JDBC4.1 are no
 
 -   Transaction control
 -   Stored procedure
--   Batch instructions (Statement Interface)
+-   Batch execution (statement interface)
 
 
 ### Error processing
@@ -254,7 +254,7 @@ The following functions corresponding to some of the functions of JDBC4.1 are no
 
 #### Invoke a method against a closed object
 
-As per the JDBC specifications, when a method other than isClosed() is invoked for an object that has a close() method, e.g. a connection object, etc., a SQLException will occur.  The error name is JDBC_ALREADY_CLOSED.
+As per the JDBC specifications, when a method other than isClosed() is invoked for an object that has a close() method, e.g,. a connection object, etc., a SQLException will occur.  The error name is JDBC_ALREADY_CLOSED.
 
 #### Invalid null argument
 
@@ -308,6 +308,7 @@ The list of main errors detected inside the driver is as follows.
 | (See "GridDB error code")     | JDBC_MESSAGE_CORRUPTED              | Protocol error                                                                                |
 
 When there is an error in the source generating the error and so on, additional details may be added to the end of the error description mentioned above.
+  
 
 
 ## API detailed specifications
@@ -387,7 +388,7 @@ This section describes methods for setting and getting attributes other than tra
 
 #### Unsupported function
 
-Unsupported methods in the connection interface is listed below. When these methods are executed, SQLFeatureNotSupportedException will occur.
+Unsupported methods in the connection interface are listed below. When these methods are executed, SQLFeatureNotSupportedException will occur.
 
 - Standard functions
   - CallableStatement prepareCall(String sql)
@@ -500,7 +501,7 @@ ResultSet getColumns(String catalog, String schemaPattern, String tableNamePatte
   | DOUBLE ARRAY    | 'DOUBLE_ARRAY'      | 1111 (Types.OTHER)   |
   | TIMESTAMP ARRAY | 'TIMESTAMP_ARRAY'   | 1111 (Types.OTHER)   |
 
-- For GEOMETRY type and array type, the value will be returned if information of the table with these data types created by NoSQL interface is acquired. JDBC can not create tables with these data types.
+- For GEOMETRY type and array type, the value will be returned if information of the table with these data types created by NoSQL interface is acquired. JDBC cannot create tables with these data types.
 
   
 
@@ -827,8 +828,8 @@ Only FETCH_FORWARD is supported for the fetch direction. A SQLException occurs i
 
 #### Unsupported function
 
--   Batch instructions
-    -   Batch instructions for Statement interface are unsupported. When using the following functions, the same error occurs as when using unsupported standard functions.
+-   Batch update
+    -   Batch updates for the Statement interface are not supported. If the following functions are used, the same error as the one that occurs when unsupported standard functions are used.
         -   addBatch()
         -   clearBatch()
         -   executeBatch()
@@ -859,7 +860,7 @@ The following methods are supported. A SQLException occurs when invoking the que
 -   addBatch()
 -   clearBatch()
 -   executeBatch()
-    -    Batch updates are only possible for SQL statements that do not include ResultSet, and an error will be returned if they do. The timing of returning an error is not during addBatch()/clearBatch() but during executeBatch(). Additionally, cases where the target SQL is a compound statement will also result in an error.
+    -   Batch updates are only possible for SQL statements that do not contain ResultSet. If they do, an error will be returned. This error is returned not when addBatch() and clearBatch() are used but when executeBatch() is used. An error also occurs when the target SQL statements are complex statements.
 -   clearParameters()
 -   getMetaData()
 -   getParameterMetaData()
@@ -1026,7 +1027,7 @@ When getting the value of a specified column, if the data type maintained by the
         -   yyyy-MM-dd
         -   HH:mm:ss.SSS
         -   HH:mm:ss
-    -   If a setting value for the time zone is contained in the string, the value is adopted. Otherwise, if the time zone is specified in the argument java.util.Calendar of a API such as ResultSet#getTimeStamp(), the content is refered to. Still otherwise, the time zone specified at the time of connection is checked, and if none is specified, UTC is adopted. Besides expressions that can be interpreted by a java.command.SimpleDateFormat "z" or "Z" pattern, "Z" expressions indicating that the time is UTC will be accepted as a timezone string.
+    -   If a setting value for the time zone is contained in the string, the value is adopted. Otherwise, if the time zone is specified in the argument java.util.Calendar of an API such as ResultSet#getTimeStamp(), the content is referred to. Still otherwise, the time zone specified at the time of connection is checked, and if none is specified, UTC is adopted. Besides expressions that can be interpreted by a java.command.SimpleDateFormat "z" or "Z" pattern, "Z" expressions indicating that the time is UTC will be accepted as a timezone string.
 -   (*6). The time zone information specified at the time of connection will be used. If not specified, UTC will be used.
 -   (*7). Convert strings and BLOB to each other by treating it as hexadecimal binary representation. ASCII letters are case insensitive. Other letters cannot be converted and cause an error.
 -   *8 Conversion between TIMESTAMP types with different precision is implicitly performed.
@@ -1131,7 +1132,7 @@ The correspondence between the column data type and the value of the execution r
 [Memo]
 
 - (*1) For example, in the case of ResultSet obtained by executing "SELECT NULL"
-- For GEOMETRY type and array type, the value will be returned if the table with these data types created by NoSQL interface is searched. JDBC can not create tables with these data types.
+- For GEOMETRY type and array type, the value will be returned if the table with these data types created by NoSQL interface is searched. JDBC cannot create tables with these data types.
 
 
 #### Attribute that returns a value
