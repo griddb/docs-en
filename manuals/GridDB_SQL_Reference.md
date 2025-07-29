@@ -118,7 +118,7 @@ Describe the data type as follows in the NewSQL interface when using the data ty
 | ARRAY                                          | Cannot be specified as a data type of the column when creating a table       |
 
 [Memo]
-   - For TIMESTAMP, the precision value (i.e., p in TIMESTAMP(p)) of TIMESTAMP with NewSQL precision needs to be defined by referring to precision information using the NoSQL interface. For how to refer to precision information, see "GridDB Java API Reference" ([GridDB_Java_API_Reference.html](GridDB_Java_API_Reference.html)) or "GridDB C API Reference" ([GridDB_C_API_Reference.html](GridDB_C_API_Reference.html)).
+   - For TIMESTAMP, the precision value (i.e., p in TIMESTAMP(p)) of TIMESTAMP with NewSQL precision needs to be defined by referring to precision information using the NoSQL interface. For how to refer to precision information, see "GridDB Java API Reference" ([GridDB_Java_API_Reference.html](GridDB_Java_API_Reference.html)) or "GridDB Java API Reference" ([GridDB_C_API_Reference.html](GridDB_C_API_Reference.html)).
 
 ### Data type when accessing a container as a table and the treatment of the values
 
@@ -141,7 +141,7 @@ The container created with the NoSQL interface client is handled as follows usin
 
 
 [memo]
-   - For TIMESTAMP, precision information for NoSQL TIMESTAMP needs to be set by checking the precision value (i.e., p in TIMESTAMP(p)) of TIMESTAMP with SQL precision. For how to set the precision information, see "GridDB Java API Reference" ([GridDB_Java_API_Reference.html](GridDB_Java_API_Reference.html)) or "GridDB C API Reference" ([GridDB_C_API_Reference.html](GridDB_C_API_Reference.html)).
+   - For TIMESTAMP, precision information for NoSQL TIMESTAMP needs to be set by checking the precision value (i.e., p in TIMESTAMP(p)) of TIMESTAMP with SQL precision. For how to set the precision information, see "GridDB Java API Reference" ([GridDB_Java_API_Reference.html](GridDB_Java_API_Reference.html)) or "GridDB Java API Reference" ([GridDB_C_API_Reference.html](GridDB_C_API_Reference.html)).
 
 ### Treatment of the data type not supported by SQL
 
@@ -4043,8 +4043,8 @@ Statistics about SQLs (queries or jobs) that are running can be obtained.
 | Column name | Item | Type       |
 |----------------------------|-----------------------------------------------------|----------|
 | DATABASE_NAME | Database name | STRING   |
-| NODE_ADDRESS     | address of the node being processed (system)  | STRING   |
-| NODE_PORT        | The port of the node being processed (system) | INTEGER  |
+| NODE_ADDRESS     | System services address of the node being processed  | STRING   |
+| NODE_PORT        | System services port of the node being processed | INTEGER  |
 | START_TIME       | Processing start time                         | TIMESTAMP|
 | APPLICATION_NAME | Application name                              | STRING   |
 | SQL               | Query character string                        | STRING   |
@@ -4067,8 +4067,8 @@ Statistics about events that are running can be obtained.
 
 | Column name | Item | Type       |
 |----------------------------|-----------------------------------------------------|----------|
-| NODE_ADDRESS     | address of the node being processed (system)  | STRING   |
-| NODE_PORT        | The port of the node being processed (system) | INTEGER  |
+| NODE_ADDRESS     | System services address of the node being processed  | STRING   |
+| NODE_PORT        | System services port of the node being processed | INTEGER  |
 | START_TIME       | Processing start time                         | TIMESTAMP|
 | APPLICATION_NAME | Application name                              | STRING   |
 | SERVICE_TYPE             | Service type (SQL/TRANSACTION/CHECKPOINT/SYNC) | STRING   |
@@ -4187,6 +4187,62 @@ Statistics aggregated for each database can be obtained.
  - To display the exact value for the item with an asterisk, additional settings are required in the node definition file.
  - For details about each statistical item and how to set it, see the [GridDB Features Reference](GridDB_FeaturesReference.md)
 
+
+## Resource statistics for a SQL statement being executed
+
+The resource consumption statistics for the processes being executed can be obtained as a metatable which provides the statistics for each statement (in the current version, limited to a SQL statement) on each node, line by line.
+
+**Table name**
+
+\#statement_resources
+
+**Schema**
+
+| Column name | Item | Type |
+|------|-----------------------------------------------------|---------|
+|REQUEST_ID|Request ID (query ID)|STRING|
+|NODE_ADDRESS|System services address of the node being processed |STRING|
+|NODE_PORT|System services port of the node being processed |INTEGER|
+|CONNECTION_ADDRESS|Client address. *In the current version, it is always NULL.|STRING|
+|CONNECTION_PORT|Client port. *In the current version, it is always NULL.|INTEGER|
+|USER_NAME|User name|STRING|
+|APPLICATION_NAME|Application name|STRING|
+|STATEMENT_TYPE|Statement type. *In the current version, it is always 'SQL_EXECUTE'.|STRING|
+|START_TIME|Time to start processing|TIMESTAMP|
+|ACTUAL_TIME|Actual processing time (in milliseconds). *In this version, it is equal to the time elapsed from the time to start processing. |LONG|
+|MEMORY_USE|Memory usage (in bytes)|LONG|
+|DATA_STORE_ACCESS|SQL intermediate store usage (in bytes)|LONG|
+|NETWORK_TRANSFER_SIZE|Network transfer size (in bytes). *In the current version, it is always zero.|LONG|
+|NETWORK_TIME|Network transfer time (in milliseconds). *In the current version, it is always zero.|LONG|
+|AVAILABLE_CONCURRENCY|Number of parallel threads available for processing. *In the current version, the number is always zero.|LONG|
+|RESOURCE_RESTRICTIONS|List of resource restrictions. *In the current version, it is always an empty string.|STRING|
+|STATEMENT|Statement type (e.g., SQL statement). *In the current version, it is always NULL.|STRING|
+
+## Resource statistics for distributed tasks being executed
+
+The resource consumption statistics for the processes being executed can be obtained as a metatable which provides the statistics for each distributed task within a statement (in the current version, limited to a SQL statement) on each node, line by line.
+
+**Table name**
+
+\#task_resources
+
+**Schema**
+
+| Column name |  Item | Type |
+|------|-----------------------------------------------------|---------|
+|REQUEST_ID|Request ID (query ID) |STRING|
+|JOB_ORDINAL|Ordinal number of a running job corresponding to a single request ID|LONG|
+|TASK_ORDINAL|Ordinal number of a distributed task corresponding to a single running job|INTEGER|
+|NODE_ADDRESS|System servics address of the node being processed |STRING|
+|NODE_PORT|System services port of the node being processed|INTEGER|
+|TASK_TYPE|Task type (e.g., SCAN and JOIN)|STRING|
+|LEAD_TIME|Time elapsed after execution start (in milliseconds)|LONG|
+|ACTUAL_TIME|Actual processing time (in milliseconds)|LONG|
+|MEMORY_USE|Memory usage (in bytes)|LONG|
+|DATA_STORE_ACCESS|SQL intermediate store usage (in bytes)|LONG|
+|NETWORK_TRANSFER_SIZE|Network transfer size (in bytes). *In the current version, it is always zero.|LONG|
+|NETWORK_TIME|Network transfer time (in milliseconds). *In the current version, it is always zero.|LONG|
+|PLAN|JSON string showing the content of a plan. *In the current version, it is always NULL.|STRING|
 
 # Reserved words
 

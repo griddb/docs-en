@@ -604,6 +604,9 @@ It should also be noted that while the time between when a failure occurs and wh
 
 
 
+[Note]
+The rack zone awareness feature is a feature that determines rules to assign cluster partitions. It cannot be used with other features that have similar functionalities, namely, the specifying of generation rules (described in 6.12.1) and of stabilization of a placement table (described in 6.12.2). Choose the one that suits your purpose.
+
 #### Settings methods
 
 #### Cluster configuration methods
@@ -1936,7 +1939,24 @@ If performance is more important than availability, set the mode to asynchronous
 [Note]
 - The number of replications is set in the cluster definition file (gs_cluster.json) /cluster/replicationNum.  Synchronous settings of the replication are set in the cluster definition file (gs_cluster.json) /transaction/replicationMode.
 
+## Data synchronization feature
 
+If a node fails, the system automatically recovers replicas and relocates data. This feature is called "autonomous data placement feature."
+This replica recovery is performed using the data synchronization feature with one of the following two methods:
+
+A. synchronization using differential transaction log
+
+B. Synchronization using original data files
+
+In many cases, data synchronization can be achieved faster with method A than method B. However, if differential transaction log is deleted, data synchronization will be performed with method B. 
+To prioritize data synchronization with method A, configure the following settings.
+Method A makes transaction log files to be used during data synchronization difficult to be removed for a specified duration after a failure.
+Note, however, method A results in an increase in the number of transaction log files retained. As such, before using the data synchronization feature, verify that sufficient disk space is available.
+
+| parameter| initial value | &nbsp;definition of parameters and their limits &nbsp; | modification made after  |
+|------------|-------|------------------------|------|
+| /sync/enableKeepLog | false | To use the synchronization feature, specify true. In addition, specifying of stabilization of a placement table must be enabled. (For details, see [Specifying stabilization of a placement table](#cluster_stable_goal).) | online |
+| /sync/keepLogInterval | 1200s |  Suppress as much as possible deletion of transaction log files for a specified duration after a failure.| online |
 
 ## Affinity function
 
@@ -2059,6 +2079,7 @@ Add a new column to a container.
 
 If you obtain existing rows after adding columns, the "empty value" defined in the data type of each column returns as an additional column value.
 See Container\<K,R\> of a "GridDB Java API reference" ([GridDB_Java_API_Reference.html](GridDB_Java_API_Reference.html)) for details about the empty value.
+(In V4.1, there is a limitation "Getting existing rows after addition of a column results in NULL return from columns without NOT NULL constraint.")
 
 <figure>
 <img src="img/add_column.png" alt="Example of adding a column" width="800"/>
@@ -2226,6 +2247,8 @@ Below is a sample for a cluster configuration with 4 nodes and 8 cluster partiti
 
 
 ### Specifying stabilization of a placement table
+
+<a id="cluster_stable_goal"></a>
 
 It is possible to output the initial cluster configuration as a cluster partition placement table file and stabilize the cluster partition placement table using the table file.
 The following file is output as a placement table.
@@ -2427,9 +2450,9 @@ The operations available for an administrator and a general user are as follows.
 |                        | Registering data in a container or table       | gs_sh                   |       | ✓                  | O : Only when update operation is possible in the user's DB     |
 |                        | Searching for a container or table             | gs_sh                   |       | ✓                  | ✓: Only in the DB of the individual     |
 |                        | Creating index to a container or table         | gs_sh                   |       | ✓                  | O : Only when update operation is possible in the user's DB     |
-| Backup management                          | Creating a backup                              | gs_backup[EE only]               |       | ✓                  | ✗                     |
-| Backup management                          | Restoring a backup                             | gs_restore[EE only]              | ✓✓    | ✗                  | ✗                     |
-|                        | Displaying a backup list                       | gs_backuplist[EE only]           |       | ✓                  | ✗                     |
+| Backup management                          | Creating a backup                              | gs_backup               |       | ✓                  | ✗                     |
+| Backup management                          | Restoring a backup                             | gs_restore              | ✓✓    | ✗                  | ✗                     |
+|                        | Displaying a backup list                       | gs_backuplist           |       | ✓                  | ✗                     |
 | System status management                   | Acquiring system information                   | gs_stat                 |       | ✓                  | ✗                     |
 |                        | Changing system parameter                      | gs_paramconf            |       | ✓                  | ✗                     |
 | Data import/export                         | Importing data                                 | gs_import               |       | ✓                  | ✓: Only in accessible object |
@@ -3499,6 +3522,9 @@ $ gs_failovercluster -u admin/admin --repair
 
 At the end of the failover, check that the /cluster/partitionStatus is NORMAL by executing a gs_stat command to the master node, and that there is no missing data in the partition by executing a gs_partition command.
 
+An operations tool named gs_clmonitor has been provided to assist in the operations procedure above. This tool automates monitoring of the cluster status and loss recovery. 
+
+
 ##### Operations after completion of recovery
 
 After recovery ends, perform a full backup of all the nodes constituting the cluster.
@@ -3806,6 +3832,7 @@ An operations tool named gs_rollingupdate has been provided to assist in the ope
 <figcaption>Rolling update assistance command</figcaption>
 </figure>
  
+
 [Note]
 -   The rolling update can be used for version 4.0 or later.
 -   The rolling update cannot be performed when the current major version and the replaced major version of the cluster are different.
@@ -5349,9 +5376,9 @@ The following commands are available in GridDB. The following commands are avail
 |                      | gs_passwd          | Change a password of an administrator user         |
 | Log data           | gs_logs            | Display recent event logs     |
 |                      | gs_logconf         | Display and change the operation categories and output levels to be output to event and audit logs.|
-| Restoring a backup | gs_backup[EE only]          | Collect backup data        |
-|                      | gs_backuplist[EE only]      | Display backup data list          |
-|                      | gs_restore[EE only]         | Restore a backup data           |
+| Restoring a backup | gs_backup          | Collect backup data        |
+|                      | gs_backuplist      | Display backup data list          |
+|                      | gs_restore         | Restore a backup data           |
 | Import/export      | gs_import          | Import exported containers and database on the disk       |
 |                      | gs_export          | Export containers and database as CSV or ZIP format to the disk     |
 | Maintenance        | gs_paramconf       | Display and change parameters    |
@@ -5744,14 +5771,15 @@ Specify the directory by specifying the full path or a relative path from the GS
 | /dataStore/syncTempPath | sync | Specify the path of the Data sync temporary file directory.                                   | Restart       |
 | /dataStore/storeMemoryLimit | 1024MB | Upper memory limit for data management                                                        | Online |
 | /dataStore/concurrency | 4 | Specify the concurrency of processing.                                                                         | Restart       |
+| /dataStore/recoveryConcurrency       | (same value as concurrency above)| Specify concurrency for recovery processing.                                                                        | Restart       |
 | /dataStore/logWriteMode | 1 | Specify the log writing mode and cycle.  If the log writing mode period is -1 or 0, log writing is performed at the end of the transaction. If it is 1 or more and less than 2<sup>31</sup>, log writing is performed at a period specified in seconds | Restart       |
 | /dataStore/persistencyMode | 1(NORMAL) | In the persistence mode, specify the retention period of an update log file during a data update. Specify either 1 (NORMAL) or 2 (RETAINING_ALL_LOG). In "NORMAL", a transaction log file which is no longer required is deleted by a checkpoint. In"RETAINING_ALL_LOG", all transaction log files are retained.  | Restart       |
 | /dataStore/affinityGroupSize | 4 | Number of affinity groups | Restart       |
 | /dataStore/storeCompressionMode | NO_COMPRESSION | Specify the data block compression mode. The following values are possible for settings."NO_COMPRESSION" Disable compression feature. <br>　"COMPRESSION_ZLIB", "COMPRESSION"：Enable ZLIB compression. <br>　"COMPRESSION_ZSTD"：Enable ZSTD compression. | Restart       |
-| /dataStore/enableAutoArchive  | false                       | whether or not to use the automatic archive feature.        | Restart       |
-| /dataStore/autoArchiveName  | ""                       | automatic archive name         | Restart       |
-| /dataStore/enableAutoArchiveOutputInfo  | true                       | whether or not to output meta information during automatic archiving regarding clusters and checkpoint execution. Valid only when automatic archive is enabled.           | Restart       |
-| /dataStore/enableAutoArchiveOutputInfoPath  | cluster                       | name of a folder to which meta information associated with the cluster during automatic archiving or with the running of a checkpoint is output.         | Restart       |
+| /dataStore/enableAutoArchive  | false                       | Whether or not to use the automatic archive feature.        | Restart       |
+| /dataStore/autoArchiveName  | ""                       | Automatic archive name         | Restart       |
+| /dataStore/enableAutoArchiveOutputInfo  | true                       | Whether or not to output meta information during automatic archiving regarding clusters and checkpoint execution. Valid only when automatic archive is enabled.           | Restart       |
+| /dataStore/enableAutoArchiveOutputInfoPath  | cluster                       | Name of a folder to which meta information associated with the cluster during automatic archiving or with the running of a checkpoint is output.         | Restart       |
 | /checkpoint/checkpointInterval | 60s | Checkpoint process execution period to perpetuate a data update block in the memory | Restart       |
 | /checkpoint/partialCheckpointInterval | 10 | The number of split processes that write block management information to checkpoint log files during a checkpoint. | Restart       |
 | /cluster/serviceAddress | Conforms to the upper serviceAddress | Standby address for cluster configuration | Restart       |
@@ -5759,12 +5787,14 @@ Specify the directory by specifying the full path or a relative path from the GS
 | /cluster/notificationInterfaceAddress | "" | Specify the address of the interface which sends multicasting packets. | Restart       |
 | /cluster/rackZoneId  | ""                       | ID for grouping nodes with the same level of availability together | Restart      |
 | /cluster/goalAssignmentRule  | DEFAULT                       | rule to be assigned to a cluster partition placement table when a new configuration is detected. Specify default (DEFAULT) or round robin (ROUNDROBIN). | Restart       |
-| /cluster/enableStableGoal  | false                       |  whether or not to use stabilization of a cluster partition placement table. | Restart       |
+| /cluster/enableStableGoal  | false                       |  Whether or not to use stabilization of a cluster partition placement table. | Restart       |
 | /cluster/enableStandbyMode  | false                       |  Specify whether to enable the standby mode. | Restart       |
 | /sync/serviceAddress | Conforms to the upper serviceAddress | Reception address for data synchronization among the clusters | Restart       |
 | /sync/servicePort | 10020 | Standby port for data synchronization | Restart       |
-| /sync/redoLogErrorKeepInterval                    | 600s                      | duration for which contents displayed in case of a REDO error is retained. (When the duration expires, they are automatically deleted.)   | Restart       |
-| /sync/redoLogMaxMessageSize                    |      2097152                | maximum transaction log size (in bytes) by which to split a file for REDO split execution. Log is read from the target file until the specified size is reached. Then, split execution for replication and REDO is performed. | Restart       |
+| /sync/redoLogErrorKeepInterval                    | 600s                      | Duration for which contents displayed in case of a REDO error is retained. (When the duration expires, they are automatically deleted.)   |        |
+| /sync/redoLogMaxMessageSize                    |      2097152                | Maximum transaction log size (in bytes) by which to split a file for REDO split execution. Log is read from the target file until the specified size is reached. Then, split execution for replication and REDO is performed. |
+| /sync/enableKeepLog                    |      false                | Whether to enable the function to retain transaction log for a specified duration after a failure. |　Online |
+| /sync/keepLogInterval                    |      1200s                | Maximum duration for retaining transaction log | Online |
 | /system/serviceAddress | Conforms to the upper serviceAddress | Standby address for operation commands | Restart       |
 | /system/servicePort | 10040 | Standby port for operation commands | Restart       |
 | /system/eventLogPath | log | Event log file deployment directory path | Restart       |
